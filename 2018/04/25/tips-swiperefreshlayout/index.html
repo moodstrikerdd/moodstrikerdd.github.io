@@ -72,7 +72,7 @@
 
     
         <meta property="article:published_time" content="4月 25, 2018" />
-        <meta property="article:modified_time" content="4月 25, 2018" />
+        <meta property="article:modified_time" content="4月 26, 2018" />
     
 
     <!-- The Twitter Card protocol -->
@@ -108,12 +108,12 @@
             "@type": "ImageObject",
             "url": "/img/favicon.png"
         },
-        "description": "<p class="index-top-block-slogan" align="left">人生不易，靠的是坚持不懈地走在正道上。</p> <p class="index-top-block-slogan" align="right">勿忘初衷，不要被世俗蒙蔽了双眼。</p>"
+        "description": "人生不易，靠的是坚持不懈地走在正道上。<br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;勿忘初衷，不要被世俗蒙蔽了双眼。"
     },
     "headline": "源码分析SwipeRefreshLayout子View侧滑冲突（侧滑菜单ListView，ViewPager）",
     "url": "http://www.moodstrikerdd.com/2018/04/25/tips-swiperefreshlayout/index.html",
     "datePublished": "4月 25, 2018",
-    "dateModified": "4月 25, 2018",
+    "dateModified": "4月 26, 2018",
     "description": "Moodstrikerdd的博客",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#https-github-com-little-tongue-SidesplidListView"><span class="post-toc-number">1.</span> <span class="post-toc-text">https://github.com/little-tongue/SidesplidListView</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -483,7 +483,8 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>先上干货，侧滑菜单listview和去除冲突的SwipeRefreshLayout github项目地址：<br><a href="https://github.com/little-tongue/SidesplidListView" target="_blank" rel="noopener">https://github.com/little-tongue/SidesplidListView</a><br>…<br>前段时间项目需要侧滑菜单的ListView，所以自己重写ListView仿qq的部分效果自定义了一个SideslipListView，<br>在Dome里面运行正常，但是在使用的时候，发现经常侧滑有时候滑一半就失灵了，并且同时触发了SwipeRefreshLayout<br>的下拉刷新CircleImageView的显示。反复试验了几次并配合log，得出问题：当SideslipListView到了顶部且侧滑的时候<br>出现垂直方向滑动，会导致子View的滑动事件失效，SwipeRefreshLayout处理了滑动事件，显示顶部CircleImageView。<br>因为我的SideslipListView是通过对触摸事件做处理实现侧滑的，所以我第一反应就是可能滑动冲突了。</p>
+        <p>先上干货，侧滑菜单listview和去除冲突的SwipeRefreshLayout github项目地址：</p>
+<h2 id="https-github-com-little-tongue-SidesplidListView"><a href="#https-github-com-little-tongue-SidesplidListView" class="headerlink" title="https://github.com/little-tongue/SidesplidListView"></a><a href="https://github.com/little-tongue/SidesplidListView" target="_blank" rel="noopener">https://github.com/little-tongue/SidesplidListView</a></h2><p>前段时间项目需要侧滑菜单的ListView，所以自己重写ListView仿qq的部分效果自定义了一个SideslipListView，<br>在Dome里面运行正常，但是在使用的时候，发现经常侧滑有时候滑一半就失灵了，并且同时触发了SwipeRefreshLayout<br>的下拉刷新CircleImageView的显示。反复试验了几次并配合log，得出问题：当SideslipListView到了顶部且侧滑的时候<br>出现垂直方向滑动，会导致子View的滑动事件失效，SwipeRefreshLayout处理了滑动事件，显示顶部CircleImageView。<br>因为我的SideslipListView是通过对触摸事件做处理实现侧滑的，所以我第一反应就是可能滑动冲突了。</p>
 
     
 
