@@ -43,7 +43,7 @@
     
     <title>
         
-            标签: Tips | 
+            Kotlin协程Api用例详解 | 
         
         Moodstrikerdd
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Moodstrikerdd的博客">
-    <meta name="keywords" content="Android">
+    <meta name="keywords" content="Android,Api">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Moodstrikerdd">
-    <meta name="msapplication-starturl" content="http://www.moodstrikerdd.com/tags/Tips/">
+    <meta name="msapplication-starturl" content="http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Moodstrikerdd">
@@ -230,13 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://www.moodstrikerdd.com/tags/Tips/">
+    <meta property="og:url" content="http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: Tips | Moodstrikerdd">
+    <meta property="og:title" content="Kotlin协程Api用例详解 | Moodstrikerdd">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Moodstrikerdd的博客">
-    
+    <meta property="og:article:tag" content="Api"> 
 
+    
+        <meta property="article:published_time" content="Thu Apr 26 2018 21:26:10 GMT+0800">
+        <meta property="article:modified_time" content="Thu Apr 26 2018 21:52:20 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -244,13 +247,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.moodstrikerdd.com/tags/Tips/index.html" />
+        <link rel="canonical" href="http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html",
+    "headline": "Kotlin协程Api用例详解",
+    "datePublished": "Thu Apr 26 2018 21:26:10 GMT+0800",
+    "dateModified": "Thu Apr 26 2018 21:52:20 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Moodstrikerdd",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "人生不易，靠的是坚持不懈地走在正道；<br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;勿忘初衷，不要被世俗蒙蔽了双眼。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Moodstrikerdd",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",ApiAndroid",
+    "description": "Moodstrikerdd的博客",
+}
+</script>
 
 
     
@@ -285,98 +318,359 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Kotlin协程简述"><span class="post-toc-number">1.</span> <span class="post-toc-text">Kotlin协程简述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#挂起函数"><span class="post-toc-number">2.</span> <span class="post-toc-text">挂起函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#协程Api"><span class="post-toc-number">3.</span> <span class="post-toc-text">协程Api</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#context"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">context</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#async-Deferred"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">async/Deferred</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#launch-Job"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">launch/Job</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/25/tips-swiperefreshlayout/">源码分析SwipeRefreshLayout子View侧滑冲突（侧滑菜单ListView，ViewPager）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            先上干货，侧滑菜单listview和去除冲突的SwipeRefreshLayout  
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/25/tips-swiperefreshlayout/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Moodstrikerdd's avatar">
-            </div>
-            <div>
-                <strong>Moodstrikerdd</strong>
-                <span>4月 25, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Android/">Android</a>, <a class="post_category-link" href="/categories/Android/View/">View</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Kotlin协程Api用例详解
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Moodstrikerdd</strong>
+        <span>4月 26, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3aS27DMAwFwNz/0u22QFH1kXQbWxqvjMCRNVqE4ef1ceT1wsbGxsbGxsbGxr4l+xVf1efzFb5+vn5Lb8/Y2NjYJ7B/+en/vkTwyfctrnnr9/50X9gzNjY29gHsJLSsn1xTk3USXnPP2NjY2NjF+yTMrMMPNjY2Nvb/sBPkVUEOGxsbG3teVOoFqvW3qkf5hloaNjY29u3Z1TbtHe7f0N/GxsbGviV7Uu7pJSHV9sCkOIWNjY19ArtXgu8Vg6rvzY8pGirCxsbGPoCdD+us7/+1fZuPcmJjY2NvzZ4Uknqt2eQ4kmPKjx4bGxt7V3YvGEwKT70S0gUrYGNjYx/G7oWKfIVmEIpDWqHRi42Njb0Fu1oeylsIVx1lL13BxsbGPoed/8XPC/R5WT9fJ094sLGxsc9hV0dwymGjBaiGz1GjFxsbG/vh7LyUUw0e1YZutdlQDnjY2NjYh7GrAayahCRjPfnhYmNjY2PP04NqmpEc67z1i42NjX0au7e5qDQfj1ROguto+BIbGxv74ey/GHmvrnNVsCwEMGxsbOwt2ElZpxps8oJ+Hhp7VGxsbOzT2HnJJm8VTFKIPx++xMbGxt6CPdlEHjyqSUXyfN4MxsbGxj6BXQ1Rk01UU4t8J7+8FxsbG3tTdr6JfFBy3n6YrxxlYNjY2NhbsK9q0yYthHnLIdkPNjY29sns3rjMa3wlITNJOUa1NGxsbOzHsvNhml4rt1qWyhu65cQGGxsbe1P2Va3Z8gBNkJbkhzKK29jY2NgPZ1cThkIRJz6Caskpp2JjY2Ofw54ErfkRTI44bxVgY2Njn8DOXz8PadeWlpqpCDY2NvaR7GpBpxqukkPJi1bY2NjY2Out50Er2lZrELPQ2MDGxsY+gF0IBvGwzqQslQzlXJCKYGNjY2/Bngw4Vp+ptmwLsN7MKTY2NvbD2edc2NjY2NjY2NjY2Le5PgFckM7hXCHT2AAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Api/">Api</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Kotlin协程Api用例详解&url=http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html&pic=http://www.moodstrikerdd.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Kotlin协程Api用例详解&url=http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html&via=Moodstrikerdd" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=Kotlin协程Api用例详解&summary=Moodstrikerdd的博客&pics=http://www.moodstrikerdd.com/img/favicon.png&url=http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="Kotlin协程简述"><a href="#Kotlin协程简述" class="headerlink" title="Kotlin协程简述"></a>Kotlin协程简述</h3><p>开发中许多任务是需要长时间运行，并且需要调用者阻塞直到这些调用完成（比如网络 IO ，文件 IO ，CPU 或者 GPU 比较集中的工作）。协程提供了一种避免线程阻塞并且用一种更轻量级，更易操控到操作：协程暂停。</p>
+<pre><code>//添加Kotlin协程依赖
+implementation &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:0.22.5&quot;
+</code></pre><h3 id="挂起函数"><a href="#挂起函数" class="headerlink" title="挂起函数"></a>挂起函数</h3><p>当一个函数被 suspend 修饰时表示可以被挂起，调用它会导致挂起协程，挂起函数可以和正常函数那样接受参数返回结果，但只能在协程中调用或着被其他挂起函数调用。</p>
+<pre><code>suspend fun doSomething(){
+        //do something
+        delay(1000)
+    }
+</code></pre><p>因为delay为Kotlin封装的挂起函数，所以调用delay的函数也必须是挂起函数。</p>
+<h3 id="协程Api"><a href="#协程Api" class="headerlink" title="协程Api"></a>协程Api</h3><p>在已有的Api中，Kotlin提供了两种方式实现协程 async/Deferred和launch/Job</p>
+<pre><code>//async/Deferred
+public actual fun &lt;T&gt; async(
+    context: CoroutineContext = DefaultDispatcher,
+    start: CoroutineStart = CoroutineStart.DEFAULT,
+    parent: Job? = null,
+   &lt;strong&gt; block: suspend CoroutineScope.() -&gt; T&lt;/strong&gt;
+): Deferred&lt;T&gt; {
+    val newContext = newCoroutineContext(context, parent)
+    val coroutine = if (start.isLazy)
+        LazyDeferredCoroutine(newContext, block) else
+        DeferredCoroutine&lt;T&gt;(newContext, active = true)
+    coroutine.start(start, coroutine, block)
+    return coroutine
+}
+</code></pre><pre><code>//launch/Job
+public expect fun launch(
+    context: CoroutineContext = DefaultDispatcher,
+    start: CoroutineStart = CoroutineStart.DEFAULT,
+    parent: Job? = null,
+   &lt;strong&gt; block: suspend CoroutineScope.() -&gt; Unit&lt;/strong&gt;
+): Job
+</code></pre><p>从源码中可以看出async和launch的参数列表中只有最后一个参数：带有 suspend 修饰的函数类型不同，async中的lambda有返回值，和Deferred的类型相同。launch中的lambda没有返回值。</p>
+<h4 id="context"><a href="#context" class="headerlink" title="context"></a>context</h4><p>两个Api的构造函数中，第一个参数为context。在android开发中比较常用的两个为UI何CommonPool。<br>UI为主线程，UI线程，只有context是UI的launch或者async的block lambda中才能更新UI<br>CommonPool为公共的线程池，在context是CommonPool的lauch或者async中的block lambda中可以异步处理耗时操作。</p>
+<pre><code>launch(UI) {
+            text.setText(&quot;UI&quot;)
+        }
+async(UI) {
+            text.setText(&quot;UI&quot;)
+        }
+launch(CommonPool) {
+            delay(1000)
+        }
+async(CommonPool) {
+            delay(1000)
+        }
+</code></pre><h4 id="async-Deferred"><a href="#async-Deferred" class="headerlink" title="async/Deferred"></a>async/Deferred</h4><pre><code> async{
+            loge(message = &quot;outer start&quot;)
+            val inner = async{
+                loge(message = &quot;inner start&quot;)
+                //do something
+                delay(1000)
+                loge(message = &quot;inner stop&quot;)
+                &quot;stop&quot;
+            }
+            loge(message = &quot;outer wait itself start&quot;)
+            delay(500)
+            loge(message = &quot;outer wait itself stop&quot;)
+            loge(message = &quot;outer wait inner&quot;)
+            val await = inner.await()
+            loge(message = &quot;outer stop&quot;)
+            await
+        }
+//        依次打印
+//        16:30:41.759 14668-14737/com.moo.demogo E/DemoGo: outer start
+//        16:30:41.761 14668-14737/com.moo.demogo E/DemoGo: outer wait itself start
+//        16:30:41.768 14668-14737/com.moo.demogo E/DemoGo: inner start
+//        16:30:42.268 14668-14738/com.moo.demogo E/DemoGo: outer wait itself stop
+//        16:30:42.268 14668-14738/com.moo.demogo E/DemoGo: outer wait inner
+//        16:30:42.771 14668-14738/com.moo.demogo E/DemoGo: inner stop
+//        16:30:42.772 14668-14738/com.moo.demogo E/DemoGo: outer stop
+</code></pre><p>从打印的信息可以看出outer（外层async）开始线性调用，打印outer start，在inner创建之后inner也开始执行，（outer wait itself start打印在inner start之前是因为inner async在创建的过程中会耗费极少的时间，而在这段时间内outer已经执行到下一步，理论上在inner创建之后，inner和outer之后都是同步执行）当outer等待500ms之后 outer打印outer wait itself stop同时开始等待inner，打印outer wait inner，下面这句代码val await = inner.await()为Kotlin协程重点。正常情况下，outer会直接打印outer stop，之后等待500ms之后 inner stop。但是由于inner.await(),outer会挂起，等待inner执行结束，返回字符串“stop”之后，outer再结束，这也就是为什么最后是outer wait inner500ms之后inner stop 然后才是outer stop</p>
+<h4 id="launch-Job"><a href="#launch-Job" class="headerlink" title="launch/Job"></a>launch/Job</h4><pre><code>launch{
+            loge(message = &quot;outer start&quot;)
+            val inner = launch{
+                loge(message = &quot;inner start&quot;)
+                //do something
+                delay(1000)
+                loge(message = &quot;inner stop&quot;)
+            }
+            loge(message = &quot;outer wait itself start&quot;)
+            delay(500)
+            loge(message = &quot;outer wait itself stop&quot;)
+            loge(message = &quot;outer wait inner&quot;)
+            inner.join()
+            loge(message = &quot;outer stop&quot;)
+        }
+//        依次打印
+//        16:57:05.431 20131-20298/com.moo.demogo E/DemoGo: outer start
+//        16:57:05.432 20131-20298/com.moo.demogo E/DemoGo: outer wait itself start
+//        16:57:05.432 20131-20300/com.moo.demogo E/DemoGo: inner start
+//        16:57:05.940 20131-20298/com.moo.demogo E/DemoGo: outer wait itself stop
+//        16:57:05.940 20131-20298/com.moo.demogo E/DemoGo: outer wait inner
+//        16:57:06.439 20131-20298/com.moo.demogo E/DemoGo: inner stop
+//        16:57:06.441 20131-20300/com.moo.demogo E/DemoGo: outer stop
+</code></pre><p>打印信息和async/Deferred一致，区别在与lauch返回Job，挂起方法为job.join()且没有返回值。</p>
+<p>async和launch可以根据是否需要返回值这一特点选择使用或者混合使用</p>
+<pre><code>launch {
+            loge(message = &quot;outer start&quot;)
+            val inner = async {
+                loge(message = &quot;inner start&quot;)
+                //do something
+                delay(1000)
+                loge(message = &quot;inner stop&quot;)
+                &quot;stop&quot;
+            }
+            loge(message = &quot;outer wait itself start&quot;)
+            delay(500)
+            loge(message = &quot;outer wait itself stop&quot;)
+            loge(message = &quot;outer wait inner&quot;)
+            val await = inner.await()
+            //deal result await
+            loge(message = &quot;outer stop&quot;)
+        }
+</code></pre>
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            版权声明：本文为博主原创文章，未经博主允许不得转载。
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/">http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/25/tips-swiperefreshlayout/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -549,6 +843,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
