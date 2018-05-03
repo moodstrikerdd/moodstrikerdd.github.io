@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Wed Apr 25 2018 17:01:43 GMT+0800">
-        <meta property="article:modified_time" content="Sat Apr 28 2018 15:43:35 GMT+0800">
+        <meta property="article:modified_time" content="Thu May 03 2018 14:53:44 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://www.moodstrikerdd.com/2018/04/25/tips-swiperefreshlayout/index.html",
     "headline": "源码分析SwipeRefreshLayout子View侧滑冲突（侧滑菜单ListView，ViewPager）",
     "datePublished": "Wed Apr 25 2018 17:01:43 GMT+0800",
-    "dateModified": "Sat Apr 28 2018 15:43:35 GMT+0800",
+    "dateModified": "Thu May 03 2018 14:53:44 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Moodstrikerdd",
@@ -509,7 +509,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>文中涉及代码都在我的<a href="https://github.com/moodstrikerdd/DemoGo" "="" target="_blank" rel="noopener">github</a>上。如有不足之处，欢迎指正。QQ：542814693。</p>
+        <p>文中涉及代码都在我的<a href="https://github.com/moodstrikerdd/DemoGo" target="_blank" rel="noopener">github</a>上。如有不足之处，欢迎指正。QQ：542814693。</p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前段时间项目需要侧滑菜单的ListView，所以自己重写ListView仿qq的部分效果自定义了一个SideslipListView，在Dome里面运行正常，但是在使用的时候，发现经常侧滑有时候滑一半就失灵了，并且同时触发了SwipeRefreshLayout的下拉刷新CircleImageView的显示。反复试验了几次并配合log，得出问题：<strong>当SideslipListView到了顶部且侧滑的时候出现垂直方向滑动，会导致子View的滑动事件失效，SwipeRefreshLayout处理了滑动事件，显示顶部CircleImageView。</strong>因为我的SideslipListView是通过对触摸事件做处理实现侧滑的，所以我第一反应就是可能滑动冲突了。</p>
 <h3 id="Android事件分发"><a href="#Android事件分发" class="headerlink" title="Android事件分发"></a>Android事件分发</h3><p><div align="center"><img src="https://img-blog.csdn.net/20180411112342276"></div><br>上面这张图相信所有人都烂熟于心了，简单分析可以知道SwipeRefreshLayout可能搞事情的地方是<strong>dispatchTouchEvent ，onInterceptTouchEvent</strong>。那就去看看源码中是如何实现。</p>
 <h3 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h3><p>SwipeRefreshLayout继承自ViewGroup，在SwipeRefreshLayout中没有重写dispatchTouchEvent，只重写了 onInterceptTouchEvent，所以只用看在onInterceptTouchEvent中怎么处理的。<br><pre><code>@Override
@@ -762,7 +762,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -780,7 +780,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/Kotlin/">Kotlin<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/View/">View<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/Kotlin/">Kotlin<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/View/">View<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         

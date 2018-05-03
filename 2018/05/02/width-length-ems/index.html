@@ -43,7 +43,7 @@
     
     <title>
         
-            git-info | 
+            width-length-ems | 
         
         Moodstrikerdd
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Moodstrikerdd的博客">
-    <meta name="keywords" content="Android">
+    <meta name="keywords" content="Android,tips">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Moodstrikerdd">
-    <meta name="msapplication-starturl" content="http://www.moodstrikerdd.com/2018/04/26/git-info/">
+    <meta name="msapplication-starturl" content="http://www.moodstrikerdd.com/2018/05/02/width-length-ems/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Moodstrikerdd">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://www.moodstrikerdd.com/2018/04/26/git-info/">
+    <meta property="og:url" content="http://www.moodstrikerdd.com/2018/05/02/width-length-ems/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="git-info | Moodstrikerdd">
+    <meta property="og:title" content="width-length-ems | Moodstrikerdd">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Moodstrikerdd的博客">
-    
+    <meta property="og:article:tag" content="tips"> 
 
     
-        <meta property="article:published_time" content="Thu Apr 26 2018 22:43:44 GMT+0800">
-        <meta property="article:modified_time" content="Thu Apr 26 2018 22:43:45 GMT+0800">
+        <meta property="article:published_time" content="Wed May 02 2018 16:09:48 GMT+0800">
+        <meta property="article:modified_time" content="Thu May 03 2018 15:44:32 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.moodstrikerdd.com/2018/04/26/git-info/index.html" />
+        <link rel="canonical" href="http://www.moodstrikerdd.com/2018/05/02/width-length-ems/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://www.moodstrikerdd.com/2018/04/26/git-info/index.html",
-    "headline": "git-info",
-    "datePublished": "Thu Apr 26 2018 22:43:44 GMT+0800",
-    "dateModified": "Thu Apr 26 2018 22:43:45 GMT+0800",
+    "mainEntityOfPage": "http://www.moodstrikerdd.com/2018/05/02/width-length-ems/index.html",
+    "headline": "width-length-ems",
+    "datePublished": "Wed May 02 2018 16:09:48 GMT+0800",
+    "dateModified": "Thu May 03 2018 15:44:32 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Moodstrikerdd",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": "Android",
+    "keywords": ",tipsAndroid",
     "description": "Moodstrikerdd的博客",
 }
 </script>
@@ -341,6 +341,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#maxWidth"><span class="post-toc-number">2.</span> <span class="post-toc-text">maxWidth</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#maxLength"><span class="post-toc-number">3.</span> <span class="post-toc-text">maxLength</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#maxEms"><span class="post-toc-number">4.</span> <span class="post-toc-text">maxEms</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#限制TextView宽度方法"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">限制TextView宽度方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ellipsize是否生效"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">ellipsize是否生效</span></a></li></ol></li></ol>
+    </ul>
+    
 
 
 
@@ -370,7 +379,7 @@
         
     
             <p class="article-headline-p">
-                git-info
+                width-length-ems
             </p>
         </div>
 
@@ -389,7 +398,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Moodstrikerdd</strong>
-        <span>4月 26, 2018</span>
+        <span>5月 02, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -411,13 +420,22 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZ0lEQVR42u3aUY7CMAwFQO5/afYAqO1znGQDmn4hKNtMVrKN49f7p68XHh4eHh4eHh7eYbxXfH1+6/P11TtXT7z/1uDa8PDw8LbwHkLt0D1Xj08+bT0XDw8PbyPvKuDev87vT4J+Z214eHh4J/Pu36mG+Opz8fDw8L6Rl5S59+E+b0bg4eHhncxLwnq1qZo3Jo7oteDh4eHFvHzR+19vPd/Dw8PDC3jVa6xdm5fI/QsPDw9vNS8PxNU2waw2bl644+Hh4e3hlZukjfHWsS27b2pEJTUeHh7eAl4eiKsH/NUGRH4YVv7FgIeHhzeJVw3BY9Q8rHcKdzw8PLz9vLywTrYmKdmr7YzoWXh4eHiLeXnLdVahXC3W88SDh4eHt59XbdpWQ3YS7pNjsId/Ax4eHt5iXj72lCOr9+RJaFobFw8PD6/BmzVAkJTj+eFW3sBtjQ7g4eHhNdq4+RFUXhYnCSNPIXlqwcPDw1vNy1sDkxcRb8eSmTI8PDy8Bi8pgpO2xdiyxga2HlaCh4eHt5jX/9P50FW+cdXNxcPDw9vJG0sA1YOxzjaVNwsPDw9vOy9pUlRbtMk2VVNL6xcDHh4e3lReghl7P7+nmmDw8PDwTuBVk0c+XtBJMBOGrvDw8PDavOrVHwUYGwsYTAx4eHh4C3idcNxhdMYOykNXeHh4eAt4eaGcLDFPKtUtwMPDwzuN1wnQY4tOkkRynIaHh4f3vbw89FefUij38fDw8I7kVY/NVh964eHh4f0XLx8ImJUSqsddeHh4eOfw8tCcjw5UWxWz0gMeHh7eat7vXXh4eHh4eHh4eAdcfwFaZ6PN5q+YAAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aO3IjMQwFQN3/0rupE8vvAZJLJpvR1GgssRkYg8/j35XrgY2NjY2NjY2Njf2R7Ee8vj6fXH9357u/SvYz2zM2Njb2Dewf/vXHm0s+zQ8iuS72jI2NjX0BexNmnm/oUa72aKI9Y2NjY2M/PYLk0zb8PD9EbGxsbOwNOw9yOSxJWrCxsbGx90WlJLTMyvqbgtHba2nY2NjYH89+R6P33dcf2t/GxsbG/nV2PcI4Sj/asNeGq2jn2NjY2Iey9yX4PJHIfyspRbWHhY2NjX0qOy8bta/+z4Nc0jBuv/+HJ7GxsbGPZucl/rooP0ImjDzVwcbGxr6B3SYJ7eb24ec5Mgp12NjY2IeykyJRO16Tb6stD63aDNjY2NiHsmdN3CTlqMv38YBOm4RgY2Njn83evPpvmq/58+3YJTY2NvZt7HdsfdZOaItTbTDDxsbGvoedb+i1IztJipJ8Z1FUwsbGxj6U3bZsf6dtkKRJL4jb2NjY2EewN4lKnrTMxoNmx42NjY19G3tWuHksVpuizJq+2NjY2Key28QgDzCzgZu88Zzfx8bGxr6NvSrBByGqbUjs2wnY2NjYZ7Pbsnu73U1YmqU9RVEJGxsb+zh2HgxeVYpapRYlHhsbG/tU9quau22i8lpePXyJjY2NfRw7eZXPC0P5ndlozmz/2NjY2KeyZ0Wc5DiS65zdNqexsbGx72S3KUoSYPIkJB/oyRsV2NjY2Dew98WaTZhpUxFsbGxs7DyAbdKVPDi1B5enQMNUBBsbG/sPsh/xmhWJ8mRjU7SKGhvY2NjYR7PbAlP+w3lY2gxoDvvb2NjY2Mex86BVJADxCGZ+KO3QDzY2NjZ224LNC1LPw89mcDPqimBjY2Nfz541cTeF/lm6go2NjX0Pe5ZOzEYk83HMV42BYmNjY5/Nbhu9RVF+jZwdxHDmFBsbG/sPsu9Z2NjY2NjY2NjY2B+z/gMKJXIUOz7L6wAAAABJRU5ErkJggg==">
     
 </ul>
 
     
 
     <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/tips/">tips</a>
+    </ul>
     
 
     <!-- Share -->
@@ -433,7 +451,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=git-info&url=http://www.moodstrikerdd.com/2018/04/26/git-info/index.html&pic=http://www.moodstrikerdd.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=width-length-ems&url=http://www.moodstrikerdd.com/2018/05/02/width-length-ems/index.html&pic=http://www.moodstrikerdd.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -442,7 +460,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=git-info&url=http://www.moodstrikerdd.com/2018/04/26/git-info/index.html&via=Moodstrikerdd" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=width-length-ems&url=http://www.moodstrikerdd.com/2018/05/02/width-length-ems/index.html&via=Moodstrikerdd" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -451,7 +469,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.moodstrikerdd.com/2018/04/26/git-info/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.moodstrikerdd.com/2018/05/02/width-length-ems/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -460,7 +478,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.moodstrikerdd.com/2018/04/26/git-info/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.moodstrikerdd.com/2018/05/02/width-length-ems/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -472,7 +490,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=git-info&summary=Moodstrikerdd的博客&pics=http://www.moodstrikerdd.com/img/favicon.png&url=http://www.moodstrikerdd.com/2018/04/26/git-info/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=width-length-ems&summary=Moodstrikerdd的博客&pics=http://www.moodstrikerdd.com/img/favicon.png&url=http://www.moodstrikerdd.com/2018/05/02/width-length-ems/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -491,7 +509,45 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <p>文中涉及代码都在我的<a href="https://github.com/moodstrikerdd/DemoGo" target="_blank" rel="noopener">github</a>上。如有不足之处，欢迎指正。QQ：542814693。</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在DemoGo中自定义公共页面头部CommTopBar时，最开始没有限制title的长度、行数,导致在title过长时，会占满整个CommTopBar。而在TextView的文本限制中官方有3种方式，maxWidth、maxEms、maxLength。</p>
+<h3 id="maxWidth"><a href="#maxWidth" class="headerlink" title="maxWidth"></a>maxWidth</h3><p>maxWidth，传入值为dimens，TextView layout_width必须为”wrap_content”,否则该属性失效。当TextView设置maxWidth属性之后，TextView的最大宽度固定，当TextView中文字长度大于TextView的宽度时，会换行。当打到maxLines之后,ellipsize会生效。</p>
+<pre><code> &lt;TextView
+        android:id=&quot;@+id/textView1&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_margin=&quot;50dp&quot;
+        android:ellipsize=&quot;end&quot;
+        android:maxLines=&quot;2&quot;
+        android:maxWidth=&quot;100dp&quot;
+        android:text=&quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot; /&gt;
+</code></pre><p><img src="/2018/05/02/width-length-ems/text1.png" alt=""></p>
+<h3 id="maxLength"><a href="#maxLength" class="headerlink" title="maxLength"></a>maxLength</h3><p>maxLength,传入值为整形，TextView layout_width可以随意赋值。设置该属性之后TextView只会展示限制长度之内的text。</p>
+<pre><code> &lt;TextView
+        android:id=&quot;@+id/textView3&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_margin=&quot;50dp&quot;
+        android:ellipsize=&quot;end&quot;
+        android:maxLines=&quot;1&quot;
+        android:maxLength=&quot;10&quot;
+        android:text=&quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot; /&gt;
+</code></pre><p><img src="/2018/05/02/width-length-ems/text3.png" alt=""></p>
+<h3 id="maxEms"><a href="#maxEms" class="headerlink" title="maxEms"></a>maxEms</h3><p>maxEms,传入值为整形，TextView layout_width必须为wrap_content。例如设置maxEms=”10”,相当于规定TextView最大宽度为10em的长度。em为一个是长度单位，是根据文字的size来决定。（详情可以参考<a href="https://en.wikipedia.org/wiki/Em_%28typography%29" target="_blank" rel="noopener">Em (typography)</a>）</p>
+<pre><code> &lt;TextView
+        android:id=&quot;@+id/textView2&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_margin=&quot;50dp&quot;
+        android:ellipsize=&quot;end&quot;
+        android:maxEms=&quot;10&quot;
+        android:maxLines=&quot;2&quot;
+        android:text=&quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot; /&gt;
+
+</code></pre><p><img src="/2018/05/02/width-length-ems/text2.png" alt=""></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h4 id="限制TextView宽度方法"><a href="#限制TextView宽度方法" class="headerlink" title="限制TextView宽度方法"></a>限制TextView宽度方法</h4><p>1.直接限制TextView的layout_width,缺点：当文本未超出TextView的宽度时，TextView还是会占用相应大小。<br>2.maxWidth，maxWidth结合wrap_content使用，给TextView规定了最大宽度，未超过时TextView根据文本计算长度，超过时TextView宽度固定为最大宽度。<br>3.maxEms，maxEms和maxWidth相同，也是给TextView规定了最大宽度，和maxWidth的区别在于最大宽度的单位是em，而em的长度取决于字体大小。<br>4.maxLength，maxLength并不是处理TextView，而是处理设置的text，设置该属性，TextView只会展示限定范围内的text。</p>
+<h4 id="ellipsize是否生效"><a href="#ellipsize是否生效" class="headerlink" title="ellipsize是否生效"></a>ellipsize是否生效</h4><p>1.TextView layout_width设置为固定宽度，无论是否设置maxWidth、maxEms或者maxLength，只要text文本超过了TextView的宽度和最大行数，ellipsize就会生效。<br>2.TextView layout_width设置为wrap_content，maxWidth、maxEms会使ellipsize生效，maxLength会使ellipsize失效。</p>
+
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>
@@ -499,7 +555,7 @@
                             版权声明：本文为博主原创文章，未经博主允许不得转载。
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="http://www.moodstrikerdd.com/2018/04/26/git-info/">http://www.moodstrikerdd.com/2018/04/26/git-info/</a>
+                        <strong>本文链接：</strong><a href="http://www.moodstrikerdd.com/2018/05/02/width-length-ems/">http://www.moodstrikerdd.com/2018/05/02/width-length-ems/</a>
                     </p>
                 </blockquote>
         
@@ -610,7 +666,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -628,7 +684,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/Kotlin/">Kotlin<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/View/">View<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/Kotlin/">Kotlin<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/View/">View<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
