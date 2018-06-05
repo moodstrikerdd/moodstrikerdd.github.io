@@ -43,7 +43,7 @@
     
     <title>
         
-            Kotlin协程Api用例详解 | 
+            runtime-permission | 
         
         Moodstrikerdd
     </title>
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Moodstrikerdd">
-    <meta name="msapplication-starturl" content="http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/">
+    <meta name="msapplication-starturl" content="http://www.moodstrikerdd.com/2018/06/05/runtime-permission/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Moodstrikerdd">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/">
+    <meta property="og:url" content="http://www.moodstrikerdd.com/2018/06/05/runtime-permission/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Kotlin协程Api用例详解 | Moodstrikerdd">
+    <meta property="og:title" content="runtime-permission | Moodstrikerdd">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Moodstrikerdd的博客">
     <meta property="og:article:tag" content="api"> 
 
     
-        <meta property="article:published_time" content="Thu Apr 26 2018 21:26:10 GMT+0800">
-        <meta property="article:modified_time" content="Tue Jun 05 2018 10:35:24 GMT+0800">
+        <meta property="article:published_time" content="Tue Jun 05 2018 10:26:56 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 05 2018 17:41:19 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html" />
+        <link rel="canonical" href="http://www.moodstrikerdd.com/2018/06/05/runtime-permission/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html",
-    "headline": "Kotlin协程Api用例详解",
-    "datePublished": "Thu Apr 26 2018 21:26:10 GMT+0800",
-    "dateModified": "Tue Jun 05 2018 10:35:24 GMT+0800",
+    "mainEntityOfPage": "http://www.moodstrikerdd.com/2018/06/05/runtime-permission/index.html",
+    "headline": "runtime-permission",
+    "datePublished": "Tue Jun 05 2018 10:26:56 GMT+0800",
+    "dateModified": "Tue Jun 05 2018 17:41:19 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Moodstrikerdd",
@@ -347,7 +347,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Kotlin协程简述"><span class="post-toc-number">1.</span> <span class="post-toc-text">Kotlin协程简述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#挂起函数"><span class="post-toc-number">2.</span> <span class="post-toc-text">挂起函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#协程Api"><span class="post-toc-number">3.</span> <span class="post-toc-text">协程Api</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#context"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">context</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#async-Deferred"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">async/Deferred</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#launch-Job"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">launch/Job</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-0运行时权限"><span class="post-toc-number">2.</span> <span class="post-toc-text">6.0运行时权限</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#运行时权限简介"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">运行时权限简介</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#敏感权限"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">敏感权限</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#运行时权限Api"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">运行时权限Api</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#运行时权限封装"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">运行时权限封装</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-0运行时权限"><span class="post-toc-number">3.</span> <span class="post-toc-text">8.0运行时权限</span></a></li></ol>
     </ul>
     
 
@@ -379,7 +379,7 @@
         
     
             <p class="article-headline-p">
-                Kotlin协程Api用例详解
+                runtime-permission
             </p>
         </div>
 
@@ -398,7 +398,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Moodstrikerdd</strong>
-        <span>4月 26, 2018</span>
+        <span>6月 05, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -420,7 +420,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3aS27DMAwFwNz/0u22QFH1kXQbWxqvjMCRNVqE4ef1ceT1wsbGxsbGxsbGxr4l+xVf1efzFb5+vn5Lb8/Y2NjYJ7B/+en/vkTwyfctrnnr9/50X9gzNjY29gHsJLSsn1xTk3USXnPP2NjY2NjF+yTMrMMPNjY2Nvb/sBPkVUEOGxsbG3teVOoFqvW3qkf5hloaNjY29u3Z1TbtHe7f0N/GxsbGviV7Uu7pJSHV9sCkOIWNjY19ArtXgu8Vg6rvzY8pGirCxsbGPoCdD+us7/+1fZuPcmJjY2NvzZ4Uknqt2eQ4kmPKjx4bGxt7V3YvGEwKT70S0gUrYGNjYx/G7oWKfIVmEIpDWqHRi42Njb0Fu1oeylsIVx1lL13BxsbGPoed/8XPC/R5WT9fJ094sLGxsc9hV0dwymGjBaiGz1GjFxsbG/vh7LyUUw0e1YZutdlQDnjY2NjYh7GrAayahCRjPfnhYmNjY2PP04NqmpEc67z1i42NjX0au7e5qDQfj1ROguto+BIbGxv74ey/GHmvrnNVsCwEMGxsbOwt2ElZpxps8oJ+Hhp7VGxsbOzT2HnJJm8VTFKIPx++xMbGxt6CPdlEHjyqSUXyfN4MxsbGxj6BXQ1Rk01UU4t8J7+8FxsbG3tTdr6JfFBy3n6YrxxlYNjY2NhbsK9q0yYthHnLIdkPNjY29sns3rjMa3wlITNJOUa1NGxsbOzHsvNhml4rt1qWyhu65cQGGxsbe1P2Va3Z8gBNkJbkhzKK29jY2NgPZ1cThkIRJz6Caskpp2JjY2Ofw54ErfkRTI44bxVgY2Njn8DOXz8PadeWlpqpCDY2NvaR7GpBpxqukkPJi1bY2NjY2Out50Er2lZrELPQ2MDGxsY+gF0IBvGwzqQslQzlXJCKYGNjY2/Bngw4Vp+ptmwLsN7MKTY2NvbD2edc2NjY2NjY2NjY2Le5PgFckM7hXCHT2AAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0ElEQVR42u3aQU7EMAwF0N7/0rBFAsK3XaCTvKzQqDPNCwvL/rnejlwXNjY2NjY2NjY29iPZV7y++KHWkx8/+fxMBGjtGRsbG3tvdvKa7z5Z/0IVfNcBYWNjY5/J/q4AJM/kJS0peOvDre4ZGxsbG3vCzr9V3QM2NjY29vyVyYgnaRKS4oeNjY2NfddQKR/K5+Oh5Pf/eZaGjY2N/Xh2FfOEv/8038bGxsZ+MLu68oi3evkmaU5G78LGxsbelJ0XhrtaiGqLMh9jYWNjY+/Nro5pcurkUk40JIqDZGxsbOy92Xk5ybeSPJ8/kw+51nvAxsbGPpM9B/eC3ur4aRT0YmNjY2/HXheSyXH0gtteLI2NjY19Gjsf8U/GPb0mpPo7t6Ui2NjY2C/LXrcB+aCnF+VWn8xjCWxsbOxz2EkzkJScasPTiwpGQyVsbGzs7djV0pWXt2obUx0qRd/FxsbG3prduxzzG6Fvb3QVFVFsbGzsw9jzlqA6NkqCgep7sbGxsc9k3zvQ7xXLfIw1GiphY2Njb8ROLuUkvKu45iWqMMDCxsbG3po9KULVQVK1UOUNzA/DL2xsbOyt2UlByovcJGDIi1P5H4CNjY29KTu/LpMPm/LRTyGmHVwMwsbGxj6BXS0GzWZgWaiSo18fa+HKDjY2NvZG7OpQqfr6STOTvzEqkNjY2Nhbs3sxahIJ3HsBaBRLY2NjYx/DzsPXPGDItzgZSGFjY2NjV7feuy6ZFLnrpoWNjY19Aru6Jo3HJFTIj76cb2NjY2O/OLtXDPLjqF4A6h1Ws25jY2Njb8SejGyS8KB3JSjZZ2E/2NjY2Aewk/B1EuL2ML8+S8PGxsY+mD05oF48XN0bNjY2NnZ+IWbUJLQ+yd+LjY2NfQ671zDkRagaP+SRQBRXYGNjY2/Nzgc01Wi2R01K3bpAYmNjY5/DPmdhY2NjY2NjY2NjP2a9A6/JNDZbZ2zOAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -451,7 +451,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Kotlin协程Api用例详解&url=http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html&pic=http://www.moodstrikerdd.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=runtime-permission&url=http://www.moodstrikerdd.com/2018/06/05/runtime-permission/index.html&pic=http://www.moodstrikerdd.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -460,7 +460,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Kotlin协程Api用例详解&url=http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html&via=Moodstrikerdd" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=runtime-permission&url=http://www.moodstrikerdd.com/2018/06/05/runtime-permission/index.html&via=Moodstrikerdd" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -469,7 +469,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.moodstrikerdd.com/2018/06/05/runtime-permission/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -478,7 +478,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.moodstrikerdd.com/2018/06/05/runtime-permission/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -490,7 +490,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=Kotlin协程Api用例详解&summary=Moodstrikerdd的博客&pics=http://www.moodstrikerdd.com/img/favicon.png&url=http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=runtime-permission&summary=Moodstrikerdd的博客&pics=http://www.moodstrikerdd.com/img/favicon.png&url=http://www.moodstrikerdd.com/2018/06/05/runtime-permission/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -509,119 +509,339 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="Kotlin协程简述"><a href="#Kotlin协程简述" class="headerlink" title="Kotlin协程简述"></a>Kotlin协程简述</h3><p>开发中许多任务是需要长时间运行，并且需要调用者阻塞直到这些调用完成（比如网络 IO ，文件 IO ，CPU 或者 GPU 比较集中的工作）。在完成这些任务时我们也可以使用异步处理的方式，例如Rxjava。而协程提供了一种避免线程阻塞并且用一种更轻量级，更易操控到操作：协程暂停。</p>
-<pre><code>//添加Kotlin协程依赖
-implementation &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:0.22.5&quot;
-</code></pre><h3 id="挂起函数"><a href="#挂起函数" class="headerlink" title="挂起函数"></a>挂起函数</h3><p>当一个函数被 suspend 修饰时表示可以被挂起，调用它会导致挂起协程，挂起函数可以和正常函数那样接受参数返回结果，但只能在协程中调用或着被其他挂起函数调用。</p>
-<pre><code>suspend fun doSomething(){
-        //do something
-        delay(1000)
+        <p>文中涉及代码都在我的<a href="https://github.com/moodstrikerdd/DemoGo" target="_blank" rel="noopener">github</a>上。如有不足之处，欢迎指正。QQ：542814693。</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在Android 6.0 SDK 23的时候，google为了安全推出了运行时权限，控制app对用户手机权限的获取。在Android 8.0 SDK 26的时候，google进一步的优化了运行时权限。</p>
+<h3 id="6-0运行时权限"><a href="#6-0运行时权限" class="headerlink" title="6.0运行时权限"></a>6.0运行时权限</h3><h4 id="运行时权限简介"><a href="#运行时权限简介" class="headerlink" title="运行时权限简介"></a>运行时权限简介</h4><p>在6.0以前，即targetSdkVersion &lt; 23时，app获取用户手机权限，只需要在AndroidManifest.xml文件中声明相应权限即可，如：</p>
+<pre><code>&lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&gt;
+</code></pre><p>而在6.0以后，想要获取某些敏感权限不仅仅需要在AndroidManifest.xml文件中声明，还要通过运行时权限Api去动态获取，用户可以根据具体使用情况授权相应权限或者拒绝相应授权。</p>
+<h4 id="敏感权限"><a href="#敏感权限" class="headerlink" title="敏感权限"></a>敏感权限</h4><p>google官方文档上有相应表格显示哪些是敏感权限，即需要兼容运行时权限的权限和权限组。<br><img src="/2018/06/05/runtime-permission/permissions.png" alt=""></p>
+<h4 id="运行时权限Api"><a href="#运行时权限Api" class="headerlink" title="运行时权限Api"></a>运行时权限Api</h4><p>关于运行时权限，在support包中的ActivityCompat中提供了相应的Api</p>
+<pre><code>public static int checkSelfPermission(@NonNull Context context, @NonNull String permission)
+
+public static void requestPermissions(final @NonNull Activity activity,
+            final @NonNull String[] permissions, final @IntRange(from = 0) int requestCode)
+
+public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+            @NonNull int[] grantResults)
+
+public static boolean shouldShowRequestPermissionRationale(@NonNull Activity activity,
+            @NonNull String permission)
+</code></pre><p><strong>checkSelfPermission</strong>：检查app是否已经被授权了某个权限，一般在请求权限之前调用。</p>
+<p>   android.content.pm.PackageManager#PERMISSION_GRANTED 已经授权 </p>
+<p>   android.content.pm.PackageManager#PERMISSION_DENIED 没有授权<br><strong>requestPermission</strong>：请求权限，可同时请求多个。当用户已经拒绝过该权限切选择了不再提醒 requestPermission将不会获取权限<br><strong>onRequestPermissionsResult</strong>：Activity中请求权限的结果回调<br><strong>shouldShowRequestPermissionRationale</strong>字面意思是是否应该显示请求权限的根据，在使用中有以下情况</p>
+<p>   1.没有请求该权限之前，返回false</p>
+<p>   2.请求拒绝该权限，但是没有选择不再提醒，返回true</p>
+<p>   3.请求拒绝该权限，选择不再提醒，返回false（不再提醒选项一般第二次请求的时候出现）</p>
+<h4 id="运行时权限封装"><a href="#运行时权限封装" class="headerlink" title="运行时权限封装"></a>运行时权限封装</h4><pre><code>/**
+ * @author moodstrikerdd
+ * @date 2018/5/31
+ * @label 运行时权限帮助类
+ */
+object RuntimePermissionHelper {
+    val permissions = arrayListOf&lt;String&gt;()
+
+    private val permissionNotAllowed = arrayListOf&lt;String&gt;()
+
+    private const val REQUEST_CODE_PERMISSION = 1001
+
+    private var requestCode = 0
+
+    /**
+     * 检查相应权限是否已经获取，没获取的权限放入permissionNotAllowed List中
+     */
+    fun checkPermissions(activity: Activity): Boolean {
+        if (Build.VERSION.SDK_INT &lt; 23) {
+            return true
+        }
+        permissionNotAllowed.clear()
+        permissions.forEach {
+            if (ActivityCompat.checkSelfPermission(activity, it) != PackageManager.PERMISSION_GRANTED) {
+                permissionNotAllowed.add(it)
+            }
+        }
+        return permissionNotAllowed.isEmpty()
     }
-</code></pre><p>因为delay为Kotlin封装的挂起函数，所以调用delay的函数也必须是挂起函数。</p>
-<h3 id="协程Api"><a href="#协程Api" class="headerlink" title="协程Api"></a>协程Api</h3><p>在已有的Api中，Kotlin提供了两种方式实现协程 async/Deferred和launch/Job</p>
-<pre><code>//async/Deferred
-public actual fun &lt;T&gt; async(
-    context: CoroutineContext = DefaultDispatcher,
-    start: CoroutineStart = CoroutineStart.DEFAULT,
-    parent: Job? = null,
-   &lt;strong&gt; block: suspend CoroutineScope.() -&gt; T&lt;/strong&gt;
-): Deferred&lt;T&gt; {
-    val newContext = newCoroutineContext(context, parent)
-    val coroutine = if (start.isLazy)
-        LazyDeferredCoroutine(newContext, block) else
-        DeferredCoroutine&lt;T&gt;(newContext, active = true)
-    coroutine.start(start, coroutine, block)
-    return coroutine
+
+    /**
+     * 方式一 请求权限
+     * 先判断shouldShowRequestPermissionRationale，根据返回值决定是跳转设置界面还是请求权限
+     */
+    fun requestPermissions(activity: Activity, requestCode: Int = REQUEST_CODE_PERMISSION) {
+        if (Build.VERSION.SDK_INT &lt; 23) {
+            return
+        }
+        for (i in 0 until permissionNotAllowed.size) {
+            val shouldShow = ActivityCompat.shouldShowRequestPermissionRationale(activity, permissionNotAllowed[i])
+            val requested = SPUtils.get(permissionNotAllowed[i], false) as Boolean
+            if (requested &amp;&amp; !shouldShow) {
+                AlertDialog.Builder(activity)
+                        .setTitle(&quot;提示&quot;)
+                        .setMessage(&quot;当前应用缺少权限:${Permission.getPermissionName(permissionNotAllowed.toTypedArray())}。请点击\&quot;设置\&quot;,\&quot;权限\&quot;打开相应权限&quot;)
+                        .setPositiveButton(&quot;设置&quot;) { _, _ -&gt; AppUtils.getAppDetailSettingIntent(activity) }
+                        .setNegativeButton(&quot;取消&quot;) { dialog, _ -&gt; dialog.dismiss() }
+                        .create()
+                        .show()
+                return
+            }
+        }
+        RuntimePermissionHelper.requestCode = requestCode
+        permissionNotAllowed.forEach { SPUtils.put(it, true) }
+        ActivityCompat.requestPermissions(activity, permissionNotAllowed.toTypedArray(), requestCode)
+    }
+
+    /**
+     * 方式二 请求权限
+     * 直接请求未授权的权限
+     */
+    fun requestPermissions2(activity: Activity, requestCode: Int = REQUEST_CODE_PERMISSION) {
+        if (Build.VERSION.SDK_INT &lt; 23) {
+            return
+        }
+        RuntimePermissionHelper.requestCode = requestCode
+        permissionNotAllowed.forEach { SPUtils.put(it, true) }
+        ActivityCompat.requestPermissions(activity, permissionNotAllowed.toTypedArray(), requestCode)
+    }
+
+    /**
+     * 方式二 直接请求所有权限
+     */
+    fun requestPermissionsWithoutCheck(activity: Activity, requestCode: Int = REQUEST_CODE_PERMISSION) {
+        if (Build.VERSION.SDK_INT &lt; 23) {
+            return
+        }
+        RuntimePermissionHelper.requestCode = requestCode
+        ActivityCompat.requestPermissions(activity, permissions.toTypedArray(), requestCode)
+    }
+
+    /**
+     * 方式一 结果回调 只存在 获取权限失败和成功
+     */
+    fun onRequestPermissionsResult(requestCode: Int, permissions: Array&lt;out String&gt;, grantResults: IntArray, success: (requestCode: Int) -&gt; Unit) {
+        if (requestCode == RuntimePermissionHelper.requestCode) {
+            for (i in 0 until permissions.size) {
+                if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                    toast(message = &quot;必须同意所有该类权限才能使用本程序&quot;)
+                    return
+                }
+            }
+            success(requestCode)
+        }
+    }
+
+    /**
+     * 方式二 结果回调
+     * 在回调结果中判断 shouldShowRequestPermissionRationale
+     * 三种结果
+     * 1.提示获取权限失败
+     * 2.跳转设置界面
+     * 3.获取权限成功
+     */
+    fun onRequestPermissionsResult2(activity: Activity, requestCode: Int, permissions: Array&lt;out String&gt;, grantResults: IntArray, success: (requestCode: Int) -&gt; Unit) {
+        if (requestCode == RuntimePermissionHelper.requestCode) {
+            val permissionsNotAllowed = permissions.filterIndexed { index, _ -&gt;
+                grantResults[index] != PackageManager.PERMISSION_GRANTED
+            }
+            for (i in 0 until permissions.size) {
+                if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permissions[i])) {
+                        toast(message = &quot;必须同意${Permission.getPermissionName(permissionsNotAllowed.toTypedArray())}权限才能使
+                    } else {
+                        AlertDialog.Builder(activity)
+                                .setTitle(&quot;提示&quot;)
+                                .setMessage(&quot;当前应用缺少权限:${Permission.getPermissionName(permissionsNotAllowed.toTypedArray())}。请点击\&quot;设置\&quot;,\&quot;权限\&quot;打开相应权限&quot;)
+                                .setPositiveButton(&quot;设置&quot;) { _, _ -&gt; AppUtils.getAppDetailSettingIntent(activity) }
+                                .setNegativeButton(&quot;取消&quot;) { dialog, _ -&gt; dialog.dismiss() }
+                                .create()
+                                .show()
+                    }
+                    return
+                }
+            }
+            success(requestCode)
+        }
+    }
 }
-</code></pre><pre><code>//launch/Job
-public expect fun launch(
-    context: CoroutineContext = DefaultDispatcher,
-    start: CoroutineStart = CoroutineStart.DEFAULT,
-    parent: Job? = null,
-   &lt;strong&gt; block: suspend CoroutineScope.() -&gt; Unit&lt;/strong&gt;
-): Job
-</code></pre><p>从源码中可以看出async和launch的参数列表中只有最后一个参数：带有 suspend 修饰的函数类型不同，async中的lambda有返回值，和Deferred的类型相同。launch中的lambda没有返回值。</p>
-<h4 id="context"><a href="#context" class="headerlink" title="context"></a>context</h4><p>两个Api的构造函数中，第一个参数为context。在android开发中比较常用的两个为UI何CommonPool。<br>UI为主线程，UI线程，只有context是UI的launch或者async的block lambda中才能更新UI<br>CommonPool为公共的线程池，在context是CommonPool的lauch或者async中的block lambda中可以异步处理耗时操作。</p>
-<pre><code>launch(UI) {
-            text.setText(&quot;UI&quot;)
-        }
-async(UI) {
-            text.setText(&quot;UI&quot;)
-        }
-launch(CommonPool) {
-            delay(1000)
-        }
-async(CommonPool) {
-            delay(1000)
-        }
-</code></pre><h4 id="async-Deferred"><a href="#async-Deferred" class="headerlink" title="async/Deferred"></a>async/Deferred</h4><pre><code> async{
-            loge(message = &quot;outer start&quot;)
-            val inner = async{
-                loge(message = &quot;inner start&quot;)
-                //do something
-                delay(1000)
-                loge(message = &quot;inner stop&quot;)
-                &quot;stop&quot;
+</code></pre><p>区别在于shouldShowRequestPermissionRationale的调用位置<br>1.在请求权限之前调用，当shouldShowRequestPermissionRationale返回false的时候跳转设置界面，返回true的时候调用requestPermissions请求权限<br>shouldShowRequestPermissionRationale返回false跳转设置界面是因为此时requestPermission已经不能获取权限，但是返回false的时候会有一个特殊情况就是当还未请求权限时，<br>因此需要通过SharedPreferences记录是否已经请求过该权限。在还未请求过时，请求权限，已经请求过的同时shouldShowRequestPermissionRationale发挥false的时候跳转到设置界面</p>
+<pre><code>for (i in 0 until permissionNotAllowed.size) {
+            val shouldShow = ActivityCompat.shouldShowRequestPermissionRationale(activity, permissionNotAllowed[i])
+            val requested = SPUtils.get(permissionNotAllowed[i], false) as Boolean
+            if (requested &amp;&amp; !shouldShow) {
+                //TODO 跳转设置界面
+                return
             }
-            loge(message = &quot;outer wait itself start&quot;)
-            delay(500)
-            loge(message = &quot;outer wait itself stop&quot;)
-            loge(message = &quot;outer wait inner&quot;)
-            val await = inner.await()
-            loge(message = &quot;outer stop&quot;)
-            await
         }
-//        依次打印
-//        16:30:41.759 14668-14737/com.moo.demogo E/DemoGo: outer start
-//        16:30:41.761 14668-14737/com.moo.demogo E/DemoGo: outer wait itself start
-//        16:30:41.768 14668-14737/com.moo.demogo E/DemoGo: inner start
-//        16:30:42.268 14668-14738/com.moo.demogo E/DemoGo: outer wait itself stop
-//        16:30:42.268 14668-14738/com.moo.demogo E/DemoGo: outer wait inner
-//        16:30:42.771 14668-14738/com.moo.demogo E/DemoGo: inner stop
-//        16:30:42.772 14668-14738/com.moo.demogo E/DemoGo: outer stop
-</code></pre><p>从打印的信息可以看出outer（外层async）开始线性调用，打印outer start，在inner创建之后inner也开始执行，（outer wait itself start打印在inner start之前是因为inner async在创建的过程中会耗费极少的时间，而在这段时间内outer已经执行到下一步，理论上在inner创建之后，inner和outer之后都是同步执行）当outer等待500ms之后 outer打印outer wait itself stop同时开始等待inner，打印outer wait inner，下面这句代码val await = inner.await()为Kotlin协程重点。正常情况下，outer会直接打印outer stop，之后等待500ms之后 inner stop。但是由于inner.await(),outer会挂起，等待inner执行结束，返回字符串“stop”之后，outer再结束，这也就是为什么最后是outer wait inner500ms之后inner stop 然后才是outer stop</p>
-<h4 id="launch-Job"><a href="#launch-Job" class="headerlink" title="launch/Job"></a>launch/Job</h4><pre><code>launch{
-            loge(message = &quot;outer start&quot;)
-            val inner = launch{
-                loge(message = &quot;inner start&quot;)
-                //do something
-                delay(1000)
-                loge(message = &quot;inner stop&quot;)
+        RuntimePermissionHelper.requestCode = requestCode
+        //可请求权限，并让请求的权限标记为已请求
+        permissionNotAllowed.forEach { SPUtils.put(it, true) }
+        ActivityCompat.requestPermissions(activity, permissionNotAllowed.toTypedArray(), requestCode)
+
+</code></pre><p>2.在返回结果中调用，这种方式是为了避免还未请求时shouldShowRequestPermissionRationale返回false的特殊情况。<br>在请求权限失败的时候判断shouldShowRequestPermissionRationale的返回值，返回true的时候提示获取权限失败，false的时候跳转到设置界面。</p>
+<pre><code>fun onRequestPermissionsResult2(activity: Activity, requestCode: Int, permissions: Array&lt;out String&gt;, grantResults: IntArray, success: (requestCode: Int) -&gt; Unit) {
+        if (requestCode == RuntimePermissionHelper.requestCode) {
+            val permissionsNotAllowed = permissions.filterIndexed { index, _ -&gt;
+                grantResults[index] != PackageManager.PERMISSION_GRANTED
             }
-            loge(message = &quot;outer wait itself start&quot;)
-            delay(500)
-            loge(message = &quot;outer wait itself stop&quot;)
-            loge(message = &quot;outer wait inner&quot;)
-            inner.join()
-            loge(message = &quot;outer stop&quot;)
-        }
-//        依次打印
-//        16:57:05.431 20131-20298/com.moo.demogo E/DemoGo: outer start
-//        16:57:05.432 20131-20298/com.moo.demogo E/DemoGo: outer wait itself start
-//        16:57:05.432 20131-20300/com.moo.demogo E/DemoGo: inner start
-//        16:57:05.940 20131-20298/com.moo.demogo E/DemoGo: outer wait itself stop
-//        16:57:05.940 20131-20298/com.moo.demogo E/DemoGo: outer wait inner
-//        16:57:06.439 20131-20298/com.moo.demogo E/DemoGo: inner stop
-//        16:57:06.441 20131-20300/com.moo.demogo E/DemoGo: outer stop
-</code></pre><p>打印信息和async/Deferred一致，区别在与lauch返回Job，挂起方法为job.join()且没有返回值。</p>
-<p>async和launch可以根据是否需要返回值这一特点选择使用或者混合使用</p>
-<pre><code>launch {
-            loge(message = &quot;outer start&quot;)
-            val inner = async {
-                loge(message = &quot;inner start&quot;)
-                //do something
-                delay(1000)
-                loge(message = &quot;inner stop&quot;)
-                &quot;stop&quot;
+            for (i in 0 until permissions.size) {
+                if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permissions[i])) {
+                        toast(message = &quot;必须同意${Permission.getPermissionName(permissionsNotAllowed.toTypedArray())}权限才能使
+                    } else {
+                       //TODO 跳转设置界面
+                    }
+                    return
+                }
             }
-            loge(message = &quot;outer wait itself start&quot;)
-            delay(500)
-            loge(message = &quot;outer wait itself stop&quot;)
-            loge(message = &quot;outer wait inner&quot;)
-            val await = inner.await()
-            //deal result await
-            loge(message = &quot;outer stop&quot;)
+            success(requestCode)
         }
+    }
+</code></pre><h3 id="8-0运行时权限"><a href="#8-0运行时权限" class="headerlink" title="8.0运行时权限"></a>8.0运行时权限</h3><p>在6.0到8.0之间的版本中，在运行时权限申请时，授权了组中的一个权限，会同时授权权限组中其他所有权限。而在8.0及以上版本中授权组中的一个权限，并不同时授权组中其他的权限，但是当你再次请求组中其他权限的时候，会直接授权，不需要用户选择。<br>例如 Manifest.permission.READ_EXTERNAL_STORAGE和Manifest.permission.WRITE_EXTERNAL_STORAGE，在6.0~8.0之间只需请求其中一个，另一个就会同时授权，而在8.0以上，授权了其中一个，当需要另一个权限的时候需要再次手动调用requestPermission，否则不会获的授权。<br>适配方式：<br>        1.请求权限时，将同组的权限全部请求授权。<br>        2.在每个需要权限的地方，都去申请相关权限。</p>
+<pre><code>/**
+ * @author moodstrikerdd
+ * @date 2018/5/31
+ * @label 6.0运行时权限
+ */
+object Permission {
+
+    /**
+     *读写日历。
+     */
+    val CALENDAR: Array&lt;String&gt;
+    /**
+     * 相机。
+     */
+    val CAMERA: Array&lt;String&gt;
+    /**
+     * 读写联系人。
+     */
+    val CONTACTS: Array&lt;String&gt;
+    /**
+     * 读位置信息。
+     */
+    val LOCATION: Array&lt;String&gt;
+    /**
+     * 使用麦克风。
+     */
+    val MICROPHONE: Array&lt;String&gt;
+    /**
+     * 读电话状态、打电话、读写电话记录。
+     */
+    val PHONE: Array&lt;String&gt;
+    /**
+     * 传感器。
+     */
+    val SENSORS: Array&lt;String&gt;
+    /**
+     * 读写短信、收发短信。
+     */
+    val SMS: Array&lt;String&gt;
+    /**
+     * 读写存储卡。
+     */
+    val STORAGE: Array&lt;String&gt;
+
+    init {
+        if (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.M) {
+            CALENDAR = arrayOf()
+            CAMERA = arrayOf()
+            CONTACTS = arrayOf()
+            LOCATION = arrayOf()
+            MICROPHONE = arrayOf()
+            PHONE = arrayOf()
+            SENSORS = arrayOf()
+            SMS = arrayOf()
+            STORAGE = arrayOf()
+        } else {
+            CALENDAR = arrayOf(
+                    Manifest.permission.READ_CALENDAR,
+                    Manifest.permission.WRITE_CALENDAR)
+
+            CAMERA = arrayOf(
+                    Manifest.permission.CAMERA)
+
+            CONTACTS = arrayOf(
+                    Manifest.permission.READ_CONTACTS,
+                    Manifest.permission.WRITE_CONTACTS,
+                    Manifest.permission.GET_ACCOUNTS)
+
+            LOCATION = arrayOf(
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION)
+
+            MICROPHONE = arrayOf(
+                    Manifest.permission.RECORD_AUDIO)
+
+            if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) {
+                PHONE = arrayOf(
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.READ_PHONE_NUMBERS,
+                        Manifest.permission.ANSWER_PHONE_CALLS,
+                        Manifest.permission.ADD_VOICEMAIL,
+                        Manifest.permission.CALL_PHONE,
+                        Manifest.permission.READ_CALL_LOG,
+                        Manifest.permission.WRITE_CALL_LOG,
+                        Manifest.permission.USE_SIP,
+                        Manifest.permission.PROCESS_OUTGOING_CALLS)
+            } else {
+                PHONE = arrayOf(
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.ADD_VOICEMAIL,
+                        Manifest.permission.CALL_PHONE,
+                        Manifest.permission.READ_CALL_LOG,
+                        Manifest.permission.WRITE_CALL_LOG,
+                        Manifest.permission.USE_SIP,
+                        Manifest.permission.PROCESS_OUTGOING_CALLS)
+            }
+
+            SENSORS = arrayOf(
+                    Manifest.permission.BODY_SENSORS)
+
+            SMS = arrayOf(
+                    Manifest.permission.SEND_SMS,
+                    Manifest.permission.RECEIVE_SMS,
+                    Manifest.permission.READ_SMS,
+                    Manifest.permission.RECEIVE_WAP_PUSH,
+                    Manifest.permission.RECEIVE_MMS)
+
+            STORAGE = arrayOf(
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        }
+    }
+
+    /**
+     * 获取单个权限的名称
+     */
+    fun getPermissionName(permission: String): String {
+        var permissionName = &quot;&quot;
+        when {
+            CALENDAR.contains(permission) -&gt; permissionName = &quot;日历&quot;
+            CAMERA.contains(permission) -&gt; permissionName = &quot;相机&quot;
+            CONTACTS.contains(permission) -&gt; permissionName = &quot;联系人&quot;
+            LOCATION.contains(permission) -&gt; permissionName = &quot;定位&quot;
+            MICROPHONE.contains(permission) -&gt; permissionName = &quot;麦克风&quot;
+            PHONE.contains(permission) -&gt; permissionName = &quot;电话&quot;
+            SENSORS.contains(permission) -&gt; permissionName = &quot;传感器&quot;
+            SMS.contains(permission) -&gt; permissionName = &quot;短信&quot;
+            STORAGE.contains(permission) -&gt; permissionName = &quot;读写存储&quot;
+        }
+        return permissionName
+    }
+
+    /**
+     * 获取权限的拼接名称
+     */
+    fun getPermissionName(permission: Array&lt;String&gt;): String {
+        val sb = StringBuilder()
+        permission.forEach {
+            val permissionName = getPermissionName(it)
+            if (!TextUtils.isEmpty(permissionName) &amp;&amp; !sb.contains(permissionName)) {
+                sb.append(&quot;$permissionName、&quot;)
+            }
+        }
+        sb.deleteCharAt(sb.length - 1)
+        return sb.toString()
+    }
+}
 </code></pre>
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -630,7 +850,7 @@ async(CommonPool) {
                             版权声明：本文为博主原创文章，未经博主允许不得转载。
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/">http://www.moodstrikerdd.com/2018/04/26/kotlin-coroutines/</a>
+                        <strong>本文链接：</strong><a href="http://www.moodstrikerdd.com/2018/06/05/runtime-permission/">http://www.moodstrikerdd.com/2018/06/05/runtime-permission/</a>
                     </p>
                 </blockquote>
         
@@ -652,21 +872,13 @@ async(CommonPool) {
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/04/26/retrofit-coroutines/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/04/25/tips-swiperefreshlayout/" id="post_nav-older" class="next-content">
+        <a href="/2018/05/02/width-length-ems/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
