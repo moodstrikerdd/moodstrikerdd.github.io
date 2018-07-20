@@ -43,7 +43,7 @@
     
     <title>
         
-            分类: View | 
+            WebView POST封装 | 
         
         Moodstrikerdd
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Moodstrikerdd的博客">
-    <meta name="keywords" content="Android">
+    <meta name="keywords" content="Android,tips">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Moodstrikerdd">
-    <meta name="msapplication-starturl" content="http://www.moodstrikerdd.com/categories/Android/View/">
+    <meta name="msapplication-starturl" content="http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Moodstrikerdd">
@@ -230,13 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://www.moodstrikerdd.com/categories/Android/View/">
+    <meta property="og:url" content="http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: View | Moodstrikerdd">
+    <meta property="og:title" content="WebView POST封装 | Moodstrikerdd">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Moodstrikerdd的博客">
-    
+    <meta property="og:article:tag" content="tips"> 
 
+    
+        <meta property="article:published_time" content="Fri Jul 20 2018 16:10:29 GMT+0800">
+        <meta property="article:modified_time" content="Fri Jul 20 2018 17:36:35 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -244,13 +247,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.moodstrikerdd.com/categories/Android/View/index.html" />
+        <link rel="canonical" href="http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/index.html",
+    "headline": "WebView POST封装",
+    "datePublished": "Fri Jul 20 2018 16:10:29 GMT+0800",
+    "dateModified": "Fri Jul 20 2018 17:36:35 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Moodstrikerdd",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "人生不易，靠的是坚持不懈地走在正道；<br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;勿忘初衷，不要被世俗蒙蔽了双眼。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Moodstrikerdd",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",tipsAndroid",
+    "description": "Moodstrikerdd的博客",
+}
+</script>
 
 
     
@@ -285,98 +318,297 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">基本方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求封装"><span class="post-toc-number">3.</span> <span class="post-toc-text">请求封装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用POST的问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用POST的问题</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/25/tips-swiperefreshlayout/">源码分析SwipeRefreshLayout子View侧滑冲突（侧滑菜单ListView，ViewPager）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            文中涉及代码都在我的
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/25/tips-swiperefreshlayout/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Moodstrikerdd's avatar">
-            </div>
-            <div>
-                <strong>Moodstrikerdd</strong>
-                <span>4月 25, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Android/">Android</a>, <a class="post_category-link" href="/categories/Android/View/">View</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                WebView POST封装
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Moodstrikerdd</strong>
+        <span>7月 20, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACz0lEQVR42u3aS07EMBAFwLn/pWGLhAjvtQMEu7IahcRxedP05/V25PXCxsbGxsbGxsbGfiT7FV+fn//qzvX6H+9/fjIClHvGxsbGPoGdfCZn50fQHu5sz9jY2NjnsPNgcx26ku1e/06CYh0gsbGxsbFHW08w108m+8HGxsbGXi8A5VtfCVHY2NjY2OtFpbwlkK+WF7P+rJaGjY2N/Xh2W7h/wu8/6G9jY2NjP5LdXsnn25GdNjkZ7hwbGxt7U/asrJ9s9HeaxIkCGxsbe2/2LMzkJaf8UNYHdL4JgdjY2NgHsJMwtl6KmrHzUFdkYNjY2NgbsZN/8a+P4N7y0Gwc85tgiY2Njb01e5Z+5J9vDytPOZYavdjY2NjbsZMUYlZamjWGZ+tgY2Njn8ZuN5EHueuvrLSHZzvBxsbGPoF9V/M1LzPN2sDJwWFjY2Ofxp6VkFb+mjdukzXr9gA2Njb2Yew2GciLTbMmbr4mNjY29jns9RJPyxgWhkYNBmxsbOy92TP8DJY3G5Ljrt/CxsbG3pqdh4qfHujJD6v+IjY2Nvam7OTzSQDLw0y+/qyYNczAsLGxsf8te71UtBLSZoWnZNynTkWwsbGxt2C3W2kDVT6a2Y7vRE9iY2Njb81OGgOz4k6bzOTDlHUyg42NjX0AezZYsxJgZqM57bAmNjY29mnstqy/UpBqQ1GbumBjY2OfwF5PLdqyfr7C+nFjY2Njn8BOwlje4m1LQuuN4SR0YWNjY5/DbkvwyZNta+Gane+nHr7ExsbG/rfslUDV3pk1mNsyU5GBYWNjY2/Ebks2s5CWHFM7vlMEVGxsbOwD2O0gTn4/eeu2QNU2erGxsbEPYyeF+yTUraQu+TFhY2NjY7epSBv8Vq4kZGJjY2Ofxs6bu3eFoqTpO3seGxsb+zT2vQGjXTN/N6H+Un8bGxsb+zHscy5sbGxsbGxsbGzsx1zvOvx77if0OicAAAAASUVORK5CYII=">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/tips/">tips</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=WebView POST封装&url=http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/index.html&pic=http://www.moodstrikerdd.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=WebView POST封装&url=http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/index.html&via=Moodstrikerdd" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=WebView POST封装&summary=Moodstrikerdd的博客&pics=http://www.moodstrikerdd.com/img/favicon.png&url=http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>文中涉及代码都在我的<a href="https://github.com/moodstrikerdd/DemoGo" target="_blank" rel="noopener">github</a>上。如有不足之处，欢迎指正。QQ：542814693。】</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在最近的开发中碰到了一下运用场景，当调用第三方的银行合作接口之后，app需要跳转到第三方银行的H5页面进行操作，本以为<br>银行的接口会返回一个url然后通过get方式将app中的参数传给第三方H5。但是接口返回的是一个url和一个密文参数，由于安全性，<br>银行的H5需要通过用POST请求将参数带入从而展示页面，碍于以前没有接触，下意识的以为Android的WebView不能实现，查阅过一些资料之后发现Android的WebView是可以通过POST请求<br>的方式打开相应的网页。</p>
+<h3 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h3><pre><code> //GET方式请求网页
+ public void loadUrl(String url)
+ //POST方式请求网页（若url不是http或者https链接，还是会调用GET请求方式）
+ public void postUrl(String url, byte[] postData)
+
+ //调用方法
+  val url = &quot;https://aaa...&quot;;
+  val param = &quot;abcd&quot;;
+  //根据需求是否需要将参数加密，如Base64加密
+  param = Base64.encode(param.toByteArray(), Base64.DEFAULT).toString(Charsets.UTF_8)
+  //因为在网络传输过程中有特殊符号会自动被转义，例如‘+’等需要将参数编码后传输
+  val paramString = &quot;key=&quot;+URLEncoder.encode(param, &quot;UTF-8&quot;)
+  //url 和 params都准备好之后，就可以处理请求
+  webView.poutUrl(url,paramString.toByteArray())
+</code></pre><h3 id="请求封装"><a href="#请求封装" class="headerlink" title="请求封装"></a>请求封装</h3><p>通用WebView中需要满足GET和POST两种请求方式，所以在转到WebView的activity中时需要传POST和GET的标记量，<br>参数由于可能有多个的情况，所以WebView中需要用Map&lt;String,String&gt;接收。<br>核心代码：</p>
+<pre><code>companion object {
+    fun intentStart(context: Context, url: String, title: String?) {
+        val intent = Intent(context, WebViewActivity::class.java)
+        intent.putExtra(DefineKey.URL, url)
+        intent.putExtra(DefineKey.TITLE, title ?: &quot;网页&quot;)
+        context.startActivity(intent)
+    }
+
+    fun intentStart(context: Context, url: String, title: String?, params: HashMap&lt;String, String&gt;) {
+        val intent = Intent(context, WebViewActivity::class.java)
+        intent.putExtra(DefineKey.USE_POST, true)
+        intent.putExtra(DefineKey.URL, url)
+        intent.putExtra(DefineKey.TITLE, title ?: &quot;网页&quot;)
+        intent.putExtra(DefineKey.PARAMS_MAP, params)
+        context.startActivity(intent)
+    }
+}
+
+if (usePost) {
+    val sb = StringBuilder()
+    params.forEach { key, value -&gt;
+        sb.append(&quot;$key=${URLEncoder.encode(value, &quot;UTF-8&quot;)}&quot;)
+    }
+    webView.postUrl(url, sb.toString().toByteArray())
+} else {
+    webView.loadUrl(url)
+}
+</code></pre><h3 id="使用POST的问题"><a href="#使用POST的问题" class="headerlink" title="使用POST的问题"></a>使用POST的问题</h3><p>在成功使用POST去请求加载出页面只有，发现的新的问题：在第一个页面中输入相关信息，点击跳转到了下一个网页，再点返回<br>键的时候第一个界面会加载失败，原因肯定是返回时第一个界面重新加载了，给WebView加上缓存，会发现缓存在POST请求的时候<br>并不会生效。解决方式：</p>
+<p>在一开始加载的时候我们定义了一个布尔值 userPost表示当前界面是不是使用POST请求，那么在shouldOverrideUrlLoading中<br>就可以根据这个变量使后面的url跳转到一个新的Activity去处理</p>
+<pre><code>  if (usePost) {
+    WebViewActivity.intentStart(this, url, null)
+    return true
+  }
+  return false
+</code></pre>
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            版权声明：本文为博主原创文章，未经博主允许不得转载。
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/">http://www.moodstrikerdd.com/2018/07/20/WebView-POST封装/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/06/05/runtime-permission/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
