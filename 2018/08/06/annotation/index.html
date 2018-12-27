@@ -43,7 +43,7 @@
     
     <title>
         
-            Retrofit+Kotlin协程封装 | 
+            Annotation | 
         
         Moodstrikerdd
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Moodstrikerdd的博客">
-    <meta name="keywords" content="Android,util">
+    <meta name="keywords" content="Android,api">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Moodstrikerdd">
-    <meta name="msapplication-starturl" content="https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/">
+    <meta name="msapplication-starturl" content="https://moodstrikerdd.github.io/2018/08/06/annotation/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Moodstrikerdd">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/">
+    <meta property="og:url" content="https://moodstrikerdd.github.io/2018/08/06/annotation/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Retrofit+Kotlin协程封装 | Moodstrikerdd">
+    <meta property="og:title" content="Annotation | Moodstrikerdd">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Moodstrikerdd的博客">
-    <meta property="og:article:tag" content="util"> 
+    <meta property="og:article:tag" content="api"> 
 
     
-        <meta property="article:published_time" content="Thu Apr 26 2018 22:40:08 GMT+0800">
-        <meta property="article:modified_time" content="Thu May 03 2018 14:53:44 GMT+0800">
+        <meta property="article:published_time" content="Mon Aug 06 2018 16:29:56 GMT+0800">
+        <meta property="article:modified_time" content="Thu Dec 27 2018 11:56:46 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/index.html" />
+        <link rel="canonical" href="https://moodstrikerdd.github.io/2018/08/06/annotation/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/index.html",
-    "headline": "Retrofit+Kotlin协程封装",
-    "datePublished": "Thu Apr 26 2018 22:40:08 GMT+0800",
-    "dateModified": "Thu May 03 2018 14:53:44 GMT+0800",
+    "mainEntityOfPage": "https://moodstrikerdd.github.io/2018/08/06/annotation/index.html",
+    "headline": "Annotation",
+    "datePublished": "Mon Aug 06 2018 16:29:56 GMT+0800",
+    "dateModified": "Thu Dec 27 2018 11:56:46 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Moodstrikerdd",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",utilAndroid",
+    "keywords": ",apiAndroid",
     "description": "Moodstrikerdd的博客",
 }
 </script>
@@ -347,7 +347,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Retrofit2单例"><span class="post-toc-number">2.</span> <span class="post-toc-text">Retrofit2单例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求逻辑"><span class="post-toc-number">3.</span> <span class="post-toc-text">请求逻辑</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#逻辑封装"><span class="post-toc-number">4.</span> <span class="post-toc-text">逻辑封装</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Annotation定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">Annotation定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Annotation示例"><span class="post-toc-number">2.</span> <span class="post-toc-text">Annotation示例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Annotation组成"><span class="post-toc-number">3.</span> <span class="post-toc-text">Annotation组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Target"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Target</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Retention"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Retention</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#属性"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Annotation与反射"><span class="post-toc-number">4.</span> <span class="post-toc-text">Annotation与反射</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Kotlin-Annotation-扩展"><span class="post-toc-number">5.</span> <span class="post-toc-text">Kotlin Annotation 扩展</span></a></li></ol>
     </ul>
     
 
@@ -379,7 +379,7 @@
         
     
             <p class="article-headline-p">
-                Retrofit+Kotlin协程封装
+                Annotation
             </p>
         </div>
 
@@ -398,7 +398,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Moodstrikerdd</strong>
-        <span>4月 26, 2018</span>
+        <span>8月 06, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -420,7 +420,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACz0lEQVR42u3aQW4CMRAEQP7/6eQaCYG6xxu02OUTIsC6nMNoevz4OXI9sLGxsbGxsbGxsW/JfsRr+LA/331+/eopz09Mvvt+z9jY2Nh7s/Ott9RXR/zqneTXZnvGxsbGPoGdlJNkE7Oi9f6Y8t/ExsbGxm7ZeYlqG4+XTQU2NjY29kXsNgxKGpX1ooiNjY19MruN+Nug/7J46PNZGjY2Nvbt2fnQ9D6vPzrfxsbGxr4xu11t0HNVy7G+sLGxsXdlt1H+bMS70tLMRg7Y2NjY57ATTLLRtoytFLbh/rGxsbE3Zc8uQQ5LSHAoSbkaNkvY2NjYm7JnUU6+rfwgZsc9HPRiY2Njb8RONp2/n2z9/UGvD56H821sbGzsr2VfFffngVQbTq3HTNjY2NjY7bX4ljH7nWQMjI2NjX0COyflQ9b2Ok5S/GbREjY2NvYJ7Nkj84Nrm4rHaEVFERsbG3tT9n9E/8kR5AVsJcDCxsbGPoG9PqZtm40cPytXdZaGjY2NvR07aUuSUtceTVsC2zKGjY2NvSt7VmbyViTn5cVvNtLAxsbG3ps9G+jmI4SVgtdGTsMsDRsbG/tr2e2oNR8q5IFRvpM8bKrn29jY2Nhfy84Hru3j82gpH+UuxUzY2NjYm7Jn4c6wGRiFSutFERsbG3tv9goy+Wv7yfwo88gJGxsb+wT2yoh3doGmHT/MrgFhY2Njn8xui9PsIPLPX9DwYGNjYx/Jbq9OtiOB9kDbvWFjY2OfwG5X0iSsX8TJm5kEjI2Njb03+6qidVVJa0cFxdFjY2Njb82eFa1ZM/OZCKnowLCxsbE3YicXd/JWIafmw+b8auYFUxFsbGzsrdnrDczsuk/+L8HGxsbGztlJRNVuMW+TimPFxsbGPoCdhDt5xDNrORJSW/awsbGxT2DPgptkuDtrUdpAKvouNjY29qbscxY2NjY2NjY2Njb2bdYvlw2RA3mIESUAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3ay27DMAwEwPz/T7fXAoWTXcoIDGl8Cho/NO6BIVevnyOPFzY2NjY2NjY2NvYj2a/4iG7958zk2qtv/197ded8zdjY2Nh7s3NMQm1fyoflvn0F+ZqxsbGxT2BfPT75nBSw5Pz3xXW2ZmxsbGzspMG4ump2z6SkYWNjY2PfVcBWGomV0oiNjY2NPRvQJLFBHjAMx0Pfn6VhY2NjP56dh6bP+fzVfBsbGxv7wez2mAWu719ie8/hyrGxsbE3Zc+20bRtSfsS2wA42uiJjY2NvSn7/Sg/PzMPg/M2ox0tffgHYGNjY2/KTtqAenyz3HjcNWbCxsbGPo3dFrMcnJ/TtkZ5C4SNjY19DntlKe2xHuIu5dvY2NjYG7GLIfvCt/kwaDZUqoNebGxs7I3Y+TCo+Ok/igeSlbSjK2xsbOxz2CtR7myjT7uSPBLGxsbGPoedLHplqJQHxvlK2hgYGxsbe292Hru2G2VmDUw7isrDaWxsbOxd2XmTkBekZOltMWvblahuY2NjY2/Bno1sioeNYoB8jFUUPGxsbOyt2bPNMfeGxLPGpiif2NjY2Juy7ypXLSwZ7q+UK2xsbOyT2TlmttWm3bizUtKwsbGxT2DnEexdY6N8i08S/RaNEzY2Nvam7FnxaLf1JN/mr2PYDmFjY2Nvys4HN7Nxf/KXfMw0izGwsbGxT2bXP/dLWPvKljYAYWNjYx/Absf6eUzblsCVEnvpwsbGxj6MfdermTUwyR3yNgYbGxt7b3Z7tI1EG9DmIUT+RGxsbOy92bPNNCuw73/GxsbGPoHdjnWSEVK7mXJWOJcKGDY2NvZ27OGwJt4Qnw+GZpvvl/JtbGxs7MPYeQy8Es3m5XMp6MXGxsY+nj1bymzps2YJGxsb+xx2XlqKshG0McnT29EVNjY29mnsdnCTLGjlnBxZXIuNjY29KfucAxsbGxsbGxsbG/sxxy/NDnIU4f7BvAAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -434,7 +434,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/util/">util</a>
+        <a class="post_tag-link" href="/tags/api/">api</a>
     </ul>
     
 
@@ -451,7 +451,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Retrofit+Kotlin协程封装&url=https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/index.html&pic=https://moodstrikerdd.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Annotation&url=https://moodstrikerdd.github.io/2018/08/06/annotation/index.html&pic=https://moodstrikerdd.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -460,7 +460,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Retrofit+Kotlin协程封装&url=https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/index.html&via=Moodstrikerdd" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Annotation&url=https://moodstrikerdd.github.io/2018/08/06/annotation/index.html&via=Moodstrikerdd" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -469,7 +469,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://moodstrikerdd.github.io/2018/08/06/annotation/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -478,7 +478,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://moodstrikerdd.github.io/2018/08/06/annotation/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -490,7 +490,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=Retrofit+Kotlin协程封装&summary=Moodstrikerdd的博客&pics=https://moodstrikerdd.github.io/img/favicon.png&url=https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=Annotation&summary=Moodstrikerdd的博客&pics=https://moodstrikerdd.github.io/img/favicon.png&url=https://moodstrikerdd.github.io/2018/08/06/annotation/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -510,131 +510,225 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>文中涉及代码都在我的<a href="https://github.com/moodstrikerdd/DemoGo" target="_blank" rel="noopener">github</a>上。如有不足之处，欢迎指正。QQ：542814693。</p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>上一篇博客<a href="http://moodstrikerdd.com/2018/04/26/kotlin-coroutines/" target="_blank" rel="noopener">Kotlin协程Api用例详解</a>中了解了Kotlin协程Api的使用。目前火热的Retrofit网络请求框架也支持了Kotlin协程，本篇博客中就</p>
-<pre><code>//集成准备
-    //Kotlin协程
-    implementation &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:0.22.5&quot;
-    //okhttp log拦截器
-    implementation &#39;com.squareup.okhttp3:logging-interceptor:3.10.0&#39;
-    //Retrofit2
-    implementation &#39;com.squareup.retrofit2:retrofit:2.4.0&#39;
-    //Retrofit2 gson转换器
-    implementation &#39;com.squareup.retrofit2:converter-gson:2.4.0&#39;
-    //Retrofit2 协程适配器
-    implementation &#39;com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0&#39;
-</code></pre><h3 id="Retrofit2单例"><a href="#Retrofit2单例" class="headerlink" title="Retrofit2单例"></a>Retrofit2单例</h3><p>在Retrofit是用中，推荐使用单例封装，Kotlin中使用单例也非常方便，object为单例class，参数单例可用委托by lazy</p>
-<pre><code>/**
- * @author moodstrikerdd
- * @date 2018/4/19
- * @label 单例Retrofit Retrofit帮助类
- */
-object RetrofitHelper {
-    private const val BASE_URL = &quot;http://www.wanandroid.com&quot;
-    private const val CONNECT_TIMEOUT = 30L
-    private const val READ_TIMEOUT = 10L
-    private const val TAG = &quot;Retrofit:&quot;
-    private const val DATA_FRONT = &quot;Data:&quot;
-    //实例化api
-    val api: ApiService by lazy {
-        getService(ApiService::class.java)
-    }
-    //实例化Gson，用于控制台格式化输出json
-    private val gson: Gson by lazy {
-        GsonBuilder().setPrettyPrinting().create()
-    }
-    //实例化Retrofit
-    private val mRetrofit: Retrofit by lazy {
-        Retrofit.Builder().apply {
-            baseUrl(BASE_URL)
-            client(OkHttpClient().newBuilder().apply {
-                connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
-                readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
-                addInterceptor {
-                    val request = it.request()
-                    val newBuilder = request.newBuilder()
-                    //请求预处理，此处没做处理
-                    it.proceed(newBuilder.build())
-                }
-                //log拦截器一定要最后添加，否则后面添加的拦截器修改的内容不会打印
-                addInterceptor(HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
-                    loge(TAG, if (it.startsWith(&quot;{&quot;)) {
-                        //控制台格式化输出json
-                        val fromJson = gson.fromJson(it, Any::class.java)
-                        DATA_FRONT + gson.toJson(fromJson)
-                    } else {
-                        DATA_FRONT + it
-                    })
-                }))
-            }.build())
-                    //添加gson转换器
-                    .addConverterFactory(GsonConverterFactory.create())
-                    //添加Kotlin 协程适配器
-                    .addCallAdapterFactory(CoroutineCallAdapterFactory())
-        }.build()
-    }
+<h3 id="Annotation定义"><a href="#Annotation定义" class="headerlink" title="Annotation定义"></a>Annotation定义</h3><p>java.lang.annotation，接口 Annotation。对于Annotation，是Java5的新特性，JDK5引入了Metadata（元数据）很容易的就能够调用Annotations。Annotations提供一些本来不属于程序的数据，比如：一段代码的作者或者告诉编译器禁止一些特殊的错误。An annotation 对代码的执行没有什么影响。Annotations使用@annotation的形式应用于代码：类(class),属性(attribute),方法(method)等等。一个Annotation出现在上面提到的开始位置，而且一般只有一行，也可以包含有任意的参数。</p>
+<h3 id="Annotation示例"><a href="#Annotation示例" class="headerlink" title="Annotation示例"></a>Annotation示例</h3><pre><code>//java中的Annotation
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.CLASS)
+public @interface MyAnnotation {
+}
+//kotlin中的Annotation
+@Retention(AnnotationRetention.RUNTIME)
+@Target(AnnotationTarget.FUNCTION,AnnotationTarget.CLASS)
+annotation class OnClick(vararg val value: Int)
+</code></pre><h3 id="Annotation组成"><a href="#Annotation组成" class="headerlink" title="Annotation组成"></a>Annotation组成</h3><h4 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h4><p>Target用来指定Annotation的类型，表明Annotation可以用在什么地方，一个Annotation可以有多个Target的值，表示可以用在不同的地方。java中的参数为ElementType，kotlin中的参数为AnnotationTarget。</p>
+<pre><code>//java中的Target
+public enum ElementType {
+    ANNOTATION_TYPE,    //注解
+    CONSTRUCTOR,        //构造函数
+    FIELD,              //字段（包括枚举常量）
+    LOCAL_VARIABLE,     //局部变量
+    METHOD,             //方法
+    PACKAGE,            //包
+    PARAMETER,          //参数
+    TYPE,               //类、接口（包括注解类型）或枚举
+    TYPE_PARAMETER,
+    TYPE_USE;
 
-    private fun &lt;T&gt; getService(service: Class&lt;T&gt;): T {
-        return mRetrofit.create(service)
-    }
-
-    fun &lt;T&gt; handleResult(baseBean: BaseBean&lt;T&gt;, callback: CallBack&lt;T&gt;) {
-        //以http://www.wanandroid.com api例子，BaseBean根据自己实际情况定义，处理逻辑也
-        if (baseBean.errorCode != 0 || baseBean.data == null) {
-            //自定义异常
-            throw ServiceException(baseBean.errorCode, baseBean.errorMsg)
-        } else {
-            callback.onSuccess(baseBean.data)
-        }
+    private ElementType() {
     }
 }
-</code></pre><p>ApiService在Retrofit使用中，需要定义ApiService接口。使用Kotlin协程时，返回值从Call变成了Deferred<t>。上篇博文中有讲到async/Deferred和launch/Job的区别就是acync/Deferred的挂起lambda函数会返回中Deferred<t>.await()会返回T的一个实例，而launch/Job中Job.join()没有返回值。所以Deferred<t>更适合开发中需要返回值的接口请求。</t></t></t></p>
-<pre><code>/**
- * @author moodstrikerdd
- * @date 2018/4/19
- * @label Retrofit Api
- */
-interface ApiService {
-    /**
-     * http://www.wanandroid.com
-     */
 
-    @GET(&quot;/friend/json&quot;)
-    fun getList(): Deferred&lt;BaseBean&lt;List&lt;HotWebBean&gt;&gt;&gt;
+//kotlin中的target
+public enum class AnnotationTarget {
+    /** Class, interface or object, annotation class is also included */
+    CLASS,
+    /** Annotation class only */
+    ANNOTATION_CLASS,
+    /** Generic type parameter (unsupported yet) */
+    TYPE_PARAMETER,
+    /** Property */
+    PROPERTY,
+    /** Field, including property&#39;s backing field */
+    FIELD,
+    /** Local variable */
+    LOCAL_VARIABLE,
+    /** Value parameter of a function or a constructor */
+    VALUE_PARAMETER,
+    /** Constructor only (primary or secondary) */
+    CONSTRUCTOR,
+    /** Function (constructors are not included) */
+    FUNCTION,
+    /** Property getter only */
+    PROPERTY_GETTER,
+    /** Property setter only */
+    PROPERTY_SETTER,
+    /** Type usage */
+    TYPE,
+    /** Any expression */
+    EXPRESSION,
+    /** File */
+    FILE,
+    /** Type alias */
+    @SinceKotlin(&quot;1.1&quot;)
+    TYPEALIAS
 }
-</code></pre><h3 id="请求逻辑"><a href="#请求逻辑" class="headerlink" title="请求逻辑"></a>请求逻辑</h3><pre><code> launch(UI) {
-            val deferred = async(CommonPool) {
-                RetrofitHelper.api.getList()
+</code></pre><h4 id="Retention"><a href="#Retention" class="headerlink" title="Retention"></a>Retention</h4><p>Retention中的参数表示注解保留策略，一个Annotataion只能有一个Retention。此枚举类型的常量描述保留注解的不同策略，指定保留多长的注解。</p>
+<pre><code>//java中的Retention
+public enum RetentionPolicy {
+    CLASS,//编译器将注解存储于类对应的.class文件中，但是在运行时不能通过JVM读取（默认模式）
+    RUNTIME,//编译器将注解存储于.class文件中，并且可由反射获取
+    SOURCE;//编译器处理完之后就被抛弃
+
+    private RetentionPolicy() {
+    }
+}
+//kotlin中的Retention
+public enum class AnnotationRetention {
+    /** Annotation isn&#39;t stored in binary output (同java中的SOURCE)*/
+    SOURCE,
+    /** Annotation is stored in binary output, but invisible for reflection(同java中的CLASS) */
+    BINARY,
+    /** Annotation is stored in binary output and visible for reflection (同java中的RUNTIME，默认模式) */
+    RUNTIME
+}
+</code></pre><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>注解的属性也叫做成员变量。注解只有成员变量，没有方法。注解的成员变量在注解的定义中以“无形参的方法”形式来声明，其方法名定义了该成员变量的名字，其返回值定义了该成员变量的类型。</p>
+<pre><code>//java中注解的参数
+@Retention(RetentionPolicy.CLASS)
+@Target({ElementType.TYPE, ElementType.METHOD})
+public @interface JavaNetCheck {
+
+    int[] id();
+
+    String message();
+}
+
+//kotlin中注解的参数
+@Retention(AnnotationRetention.RUNTIME)
+@Target(AnnotationTarget.FUNCTION)
+annotation class CheckNet(vararg val id: Int,val message:String)
+
+</code></pre><p>使用注解时，以key = value的形式传入相应的参数。</p>
+<pre><code> @CheckNet(R.id.btnClick1,R.id.btnClick2, message = &quot;网络连接失败！&quot;)
+ @JavaNetCheck(id = [R.id.btnClick1,R.id.btnClick2],message = &quot;网络连接失败！&quot;)
+ private fun onClick(view: View) {
+    toast(&quot;${(view as Button).text}被点击了！&quot;)
+ }
+</code></pre><p>java中如果参数名为value，则可以省略“value =”，直接赋值</p>
+<pre><code>@Retention(RetentionPolicy.CLASS)
+@Target({ElementType.TYPE, ElementType.METHOD})
+public @interface JavaNetCheck {
+
+    int[] value();
+
+    String message();
+}
+
+@JavaNetCheck(R.id.btnClick1,R.id.btnClick2,message = &quot;网络连接失败！&quot;)
+private fun onClick(view: View) {
+    toast(&quot;${(view as Button).text}被点击了！&quot;)
+}
+</code></pre><p>同时，注解中的属性可以设置默认值，java使用default关键字，kotlin直接在参数列表中赋值默认值，在使用的时候该参数就为非必传参数，不传该参数的时候使用默认值。</p>
+<pre><code>@Retention(RetentionPolicy.CLASS)
+@Target({ElementType.TYPE, ElementType.METHOD})
+public @interface JavaNetCheck {
+
+    int[] id();
+
+    String message() default &quot;网络连接失败！&quot;;
+}
+
+@Retention(AnnotationRetention.RUNTIME)
+@Target(AnnotationTarget.FUNCTION)
+annotation class CheckNet(vararg val id: Int,val message :String = &quot;网络连接失败！&quot;)
+
+@CheckNet(R.id.btnClick1,R.id.btnClick2)
+@JavaNetCheck(id = [R.id.btnClick1,R.id.btnClick2])
+private fun onClick(view: View) {
+    toast(&quot;${(view as Button).text}被点击了！&quot;)
+}
+</code></pre><h3 id="Annotation与反射"><a href="#Annotation与反射" class="headerlink" title="Annotation与反射"></a>Annotation与反射</h3><p>了解了Annotation的基本内容，如果Annotation只是给编写代码的人注解标记，并不需要如此大费周章，注解的用途还是给java程序进行注解，标记。java提供了一个接口来获取注解的实例。</p>
+<pre><code>public interface AnnotatedElement {
+    default boolean isAnnotationPresent(Class&lt;? extends Annotation&gt; var1) {
+        return this.getAnnotation(var1) != null;
+    }
+
+    &lt;T extends Annotation&gt; T getAnnotation(Class&lt;T&gt; var1);
+
+    Annotation[] getAnnotations();
+
+    default &lt;T extends Annotation&gt; T[] getAnnotationsByType(Class&lt;T&gt; var1) {
+        Annotation[] var2 = this.getDeclaredAnnotationsByType(var1);
+        if(var2.length == 0 &amp;&amp; this instanceof Class &amp;&amp; AnnotationType.getInstance(var1).isInherited()) {
+            Class var3 = ((Class)this).getSuperclass();
+            if(var3 != null) {
+                var2 = var3.getAnnotationsByType(var1);
             }
-            val await = deferred.await()
-            //处理数据
         }
-</code></pre><p>看上去十分简洁，运行可以得到数据，但是在测试几次之后，发现当接口请求错误，或者内容不对使我们抛出自定异常之后，程序直接崩溃了。查看logcat可以看到当抛出异常的时候，我们这段请求逻辑并没有去try catch导致程序直接崩溃。所以还需要在请求逻辑上面添加try catch处理。</p>
-<pre><code>  launch(UI) {
-           try {
-               val deferred = async(CommonPool) {
-                   RetrofitHelper.api.getList()
-               }
-               val await = deferred.await()
-               //处理数据
-           }catch (e:Exception){
-               e.printStackTrace()
-               //处理异常
-           }
-        }
-</code></pre><p><strong>这里抛出一个疑问，当我的try catch模块直接包含最外层的launch(UI)的时候，是不能捕获到异常的。具体我也没弄清楚原因是什么，只能推测可能是因为不能跨进程捕获异常</strong></p>
-<h3 id="逻辑封装"><a href="#逻辑封装" class="headerlink" title="逻辑封装"></a>逻辑封装</h3><p>这里请求逻辑写好了，但是没有一套统一的回调方式来处理数据和处理异常，所以还需要定义一套回调接口，同时使用Kotlin的扩展函数做进一步的封装。部分代码如下,如需要看全部逻辑代码，可以直接去我的文章顶部的Github地址查看。</p>
-<pre><code>fun &lt;T&gt; doHttp(createApi: () -&gt; Deferred&lt;BaseBean&lt;T&gt;&gt;, callBack: CallBack&lt;T&gt;) {
-    launch(UI) {
-        try {
-            val deferred = createApi()
-            val await = deferred.await()
-            RetrofitHelper.handleResult(await, callBack)
-        } catch (t: Throwable) {
-            callBack.onFailed(ExceptionHandle.handleException(t))
-        }
+
+        return var2;
     }
+
+    default &lt;T extends Annotation&gt; T getDeclaredAnnotation(Class&lt;T&gt; annotationClass) {
+        Objects.requireNonNull(annotationClass);
+        // Loop over all directly-present annotations looking for a matching one
+           for (Annotation annotation : getDeclaredAnnotations()) {
+               if (annotationClass.equals(annotation.annotationType())) {
+                    // More robust to do a dynamic cast at runtime instead
+                    // of compile-time only.
+                    return annotationClass.cast(annotation);
+               }
+           }
+        return null;
+    }
+
+    default &lt;T extends Annotation&gt; T[] getDeclaredAnnotationsByType(Class&lt;T&gt; annotationClass) {
+        return AnnotatedElements.getDirectOrIndirectAnnotationsByType(this, annotationClass);
+    }
+
+    Annotation[] getDeclaredAnnotations();
 }
-</code></pre>
+</code></pre><p>AnnotatedElement常用的方法</p>
+<p>1.isAnnotationPresent()方法可以判断该元素是否拥有指定注解类的注解，</p>
+<p>2.getAnnotation(Class<t> var1) 则返回指定注解类的注解，</t></p>
+<p>3.getAnnotations()则会返回所有的注解。</p>
+<p>实现了这个接口的类有: Class,Constructor,Executable,Field,Method,Package,Parameter,AccessibleObject这些类都位于java.lang.reflect包，这意味着我们的程序需要通过反射来识别注解。</p>
+<pre><code>val onClick = method.getAnnotation(OnClick::class.java)
+if (onClick != null) {
+     val values = onClick.value
+     ... ...
+    }
+</code></pre><h3 id="Kotlin-Annotation-扩展"><a href="#Kotlin-Annotation-扩展" class="headerlink" title="Kotlin Annotation 扩展"></a>Kotlin Annotation 扩展</h3><p>由于在Kotlin中的单个申明往往对应了多个Java声明，例如，一个Property对应了一个Field和Getter和Setter,为了使标注更为精确，Kotlin中还允许使用点目标。<br>点目标的语法为 @目标:注解名 例如:@get:MyAnnotation</p>
+<pre><code>class Country{
+    /*对属性的getter使用注解*/
+    @get:MyAnnotation2(&quot;Editable&quot;)
+    var name : String = &quot;&quot;
+
+    /*对属性使用注解*/
+    @MyAnnotation2(&quot;Editable&quot;)
+    var pop : Int = 0
+
+    /*对属性的Setter使用注解*/
+    @MyAnnotation3(&quot;Editable&quot;,&quot;Can be below 0&quot;)
+    @set:MyAnnotation3
+    var coin : Int = 0
+
+    /*对生成的Field使用注解*/
+    /*具有setter的属性一般会自动生成backing field(后备字段)*/
+    @field:MyAnnotation2(&quot;&quot;)
+    var army : Int = 1000
+
+}
+</code></pre><p>在Kotlin中支持以下点目标:</p>
+<p>property:代表kotlin中的属性，不能被Java的注解所应用</p>
+<p>field:为属性生成的字段（包括后备字段）</p>
+<p>get:属性的getter</p>
+<p>set:属性的setter</p>
+<p>receiver:扩展函数/属性的接收者</p>
+<p>param:构造函数的参数</p>
+<p>setparam:属性setter的参数</p>
+<p>delegate:委托属性存储委托实例的字段</p>
+<p>file:在文件中声明的顶层函数与类</p>
+
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>
@@ -642,7 +736,7 @@ interface ApiService {
                             版权声明：本文为博主原创文章，未经博主允许不得转载。
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/">https://moodstrikerdd.github.io/2018/04/26/retrofit-coroutines/</a>
+                        <strong>本文链接：</strong><a href="https://moodstrikerdd.github.io/2018/08/06/annotation/">https://moodstrikerdd.github.io/2018/08/06/annotation/</a>
                     </p>
                 </blockquote>
         
@@ -664,7 +758,7 @@ interface ApiService {
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/05/02/width-length-ems/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/08/06/java-reflection/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -678,7 +772,7 @@ interface ApiService {
 
     <!-- Next Nav -->
     
-        <a href="/2018/04/26/kotlin-coroutines/" id="post_nav-older" class="next-content">
+        <a href="/2018/07/31/ioc-onclick/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
