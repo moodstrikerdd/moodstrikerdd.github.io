@@ -3,17 +3,23 @@
   
     
     <entry>
-      <title>java reflection</title>
+      <title>Java反射机制</title>
       <link href="/2018/08/06/java-reflection/"/>
       <url>/2018/08/06/java-reflection/</url>
-      <content type="html"><![CDATA[<p>文中涉及代码都在我的<a href="https://github.com/moodstrikerdd/DemoGo" target="_blank" rel="noopener">github</a>上。如有不足之处，欢迎指正。QQ：542814693。</p>]]></content>
+      <content type="html"><![CDATA[<p>文中涉及代码都在我的<a href="https://github.com/moodstrikerdd/DemoGo" target="_blank" rel="noopener">github</a>上。如有不足之处，欢迎指正。QQ：542814693。</p><h3 id="Java反射机制简介"><a href="#Java反射机制简介" class="headerlink" title="Java反射机制简介"></a>Java反射机制简介</h3><p>JAVA反射机制是在运行状态中，对于任意一个实体类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为java语言的反射机制。</p><h3 id="Java反射的作用"><a href="#Java反射的作用" class="headerlink" title="Java反射的作用"></a>Java反射的作用</h3><p>在运行时判断任意一个对象所属的类。</p><p>在运行时构造任意一个类的对象。</p><p>在运行时判断任意一个类所具有的成员变量和方法。</p><p>在运行时调用任意一个对象的方法</p><h3 id="Java反射Api"><a href="#Java反射Api" class="headerlink" title="Java反射Api"></a>Java反射Api</h3><p>反射的常用类和函数:Java反射机制的实现要借助于4个类：Class，Constructor，Field，Method；其中class代表的是类对象，Constructor－类的构造器对象，Field－类的属性对象，Method－类的方法对象，通过这四个对象我们可以粗略的看到一个类的各个组成部分。</p><h4 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h4><p>手动编写的类被编译后会产生一个Class对象，其表示的是创建的类的类型信息，而且这个Class对象保存在同名.class的文件中(字节码文件)，比如创建一个Shapes类，编译Shapes类后就会创建其包含Shapes类相关类型信息的Class对象，并保存在Shapes.class字节码文件中。<strong> 在运行期间，一个类，只有一个Class对象产生 </strong></p><h5 id="获取Class对象的三种方式"><a href="#获取Class对象的三种方式" class="headerlink" title="获取Class对象的三种方式"></a>获取Class对象的三种方式</h5><p>1 Object ——&gt; getClass();</p><pre><code>A a = new A();Class aClass = a.getClass();</code></pre><p>2 任何数据类型（包括基本数据类型）都有一个“静态”的class属性</p><pre><code>Class aClass = A.class;</code></pre><p>3 通过Class类的静态方法：forName（String  className）(常用)</p><pre><code>try {        Class aClass = Class.forName(&quot;XXX.A&quot;);//注意此字符串必须是真实路径，就是带包名的类路径，包名.类名    } catch (ClassNotFoundException e) {        e.printStackTrace();    }</code></pre><h5 id="获得构造器的方法"><a href="#获得构造器的方法" class="headerlink" title="获得构造器的方法"></a>获得构造器的方法</h5><pre><code>Constructor getConstructor(Class[] params) -- 获得使用特殊的参数类型的公共构造函数， Constructor[] getConstructors() -- 获得类的所有公共构造函数 Constructor getDeclaredConstructor(Class[] params) -- 获得使用特定参数类型的构造函数Constructor[] getDeclaredConstructors() -- 获得类的所有构造函数</code></pre><h5 id="获得字段信息的方法"><a href="#获得字段信息的方法" class="headerlink" title="获得字段信息的方法"></a>获得字段信息的方法</h5><pre><code>Field getField(String name) -- 获得命名的公共字段 Field[] getFields() -- 获得类的所有公共字段 Field getDeclaredField(String name) -- 获得类声明的命名的字段 Field[] getDeclaredFields() -- 获得类声明的所有字段</code></pre><h5 id="获得方法信息的方法"><a href="#获得方法信息的方法" class="headerlink" title="获得方法信息的方法"></a>获得方法信息的方法</h5><pre><code>Method getMethod(String name, Class[] params) -- 使用特定的参数类型，获得命名的公共方法 Method[] getMethods() -- 获得类的所有公共方法 Method getDeclaredMethod(String name, Class[] params) -- 使用特写的参数类型，获得类声明的命名的方法 Method[] getDeclaredMethods() -- 获得类声明的所有方法</code></pre><h4 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor</h4><pre><code>Class&lt;T&gt; getDeclaringClass() -- 返回 Class 对象，该对象表示声明由此 Constructor 对象表示的构造方法的类,其实就是返回真实类型（不包含参数）Type[]    getGenericParameterTypes()    --按照声明顺序返回一组 Type 对象，返回的就是 Constructor对象构造函数的形参类型。String    getName()    -- 以字符串形式返回此构造方法的名称。Class&lt;?&gt;[]    getParameterTypes()    -- 按照声明顺序返回一组 Class 对象，即返回Constructor 对象所表示构造方法的形参类型T    newInstance(Object... initargs)    -- 使用此 Constructor对象表示的构造函数来创建新实例String    toGenericString()    -- 返回描述此 Constructor 的字符串，其中包括类型参数。</code></pre><h4 id="Field"><a href="#Field" class="headerlink" title="Field"></a>Field</h4><pre><code>void    set(Object obj, Object value)    -- 将指定对象变量上此 Field 对象表示的字段设置为指定的新值。Object    get(Object obj)    -- 返回指定对象上此 Field 表示的字段的值Class&lt;?&gt;    getType()    -- 返回一个 Class 对象，它标识了此Field 对象所表示字段的声明类型。boolean    isEnumConstant()    -- 如果此字段表示枚举类型的元素则返回 true；否则返回 falseString    toGenericString()    -- 返回一个描述此 Field（包括其一般类型）的字符串String    getName()    -- 返回此 Field 对象表示的字段的名称Class&lt;?&gt;    getDeclaringClass()    -- 返回表示类或接口的 Class 对象，该类或接口声明由此 Field 对象表示的字段void    setAccessible(boolean flag)    -- 将此对象的 accessible 标志设置为指示的布尔值,即设置其可访问性</code></pre><h4 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h4><pre><code>Object    invoke(Object obj, Object... args)    -- 对带有指定参数的指定对象调用由此 Method 对象表示的底层方法。Class&lt;?&gt;    getReturnType()    -- 返回一个 Class 对象，该对象描述了此 Method 对象所表示的方法的正式返回类型,即方法的返回类型Type    getGenericReturnType()    -- 返回表示由此 Method 对象所表示方法的正式返回类型的 Type 对象，也是方法的返回类型。Class&lt;?&gt;[]    getParameterTypes()    -- 按照声明顺序返回 Class 对象的数组，这些对象描述了此 Method 对象所表示的方法的形参类型。即返回方法的参数类型组成的数组Type[]    getGenericParameterTypes()    -- 按照声明顺序返回 Type 对象的数组，这些对象描述了此 Method 对象所表示的方法的形参类型的，也是返回方法的参数类型String    getName()    -- 以 String 形式返回此 Method 对象表示的方法名称，即返回方法的名称boolean    isVarArgs()    -- 判断方法是否带可变参数，如果将此方法声明为带有可变数量的参数，则返回 true；否则，返回 false。String    toGenericString()    -- 返回描述此 Method 的字符串，包括类型参数。</code></pre>]]></content>
       
       <categories>
           
-          <category> Android </category>
+          <category> Java </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> api </tag>
+            
+        </tags>
       
     </entry>
     
