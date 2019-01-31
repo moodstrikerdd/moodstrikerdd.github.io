@@ -43,7 +43,7 @@
     
     <title>
         
-            时光机 | 
+            Android数据加密：Base64 | 
         
         Moodstrikerdd
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Moodstrikerdd的博客">
-    <meta name="keywords" content="Android">
+    <meta name="keywords" content="Android,api">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Moodstrikerdd">
-    <meta name="msapplication-starturl" content="https://moodstrikerdd.github.io/timeline/">
+    <meta name="msapplication-starturl" content="https://moodstrikerdd.github.io/2019/01/29/base64/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Moodstrikerdd">
@@ -230,13 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://moodstrikerdd.github.io/timeline/">
+    <meta property="og:url" content="https://moodstrikerdd.github.io/2019/01/29/base64/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="时光机 | Moodstrikerdd">
+    <meta property="og:title" content="Android数据加密：Base64 | Moodstrikerdd">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Moodstrikerdd的博客">
-    
+    <meta property="og:article:tag" content="api"> 
 
+    
+        <meta property="article:published_time" content="Tue Jan 29 2019 14:06:56 GMT+0800">
+        <meta property="article:modified_time" content="Thu Jan 31 2019 18:03:00 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -244,13 +247,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://moodstrikerdd.github.io/timeline/index.html" />
+        <link rel="canonical" href="https://moodstrikerdd.github.io/2019/01/29/base64/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://moodstrikerdd.github.io/2019/01/29/base64/index.html",
+    "headline": "Android数据加密：Base64",
+    "datePublished": "Tue Jan 29 2019 14:06:56 GMT+0800",
+    "dateModified": "Thu Jan 31 2019 18:03:00 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Moodstrikerdd",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "人生不易，靠的是坚持不懈地走在正道；<br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;勿忘初衷，不要被世俗蒙蔽了双眼。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Moodstrikerdd",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",apiAndroid",
+    "description": "Moodstrikerdd的博客",
+}
+</script>
 
 
     
@@ -287,780 +320,275 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Base64概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">Base64概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Base64规则"><span class="post-toc-number">2.</span> <span class="post-toc-text">Base64规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Base64步骤及示例"><span class="post-toc-number">3.</span> <span class="post-toc-text">Base64步骤及示例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Android中的Base64"><span class="post-toc-number">4.</span> <span class="post-toc-text">Android中的Base64</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Base64参数说明"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Base64参数说明</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Single Timeline Page -->
-    <style>
-	.md-container {
-		width: 90%;
-		max-width: 1170px;
-		margin: 0 auto;
-	}
-	.md-container::after {
-		content: '';
-		display: table;
-		clear: both;
-	}
-	#md-timeline {
-		position: relative;
-		padding: 2em 0;
-		margin-top: 2em;
-		margin-bottom: 2em;
-	}
-	@media screen and (max-device-width:480px){
-		#md-timeline {
-			margin-top: 6em;
-		}
-	}
-	#md-timeline::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 18px;
-		height: 100%;
-		width: 2px;
-		background: #d7e4ed;
-	}
-	.md-timeline-title {
-		font-size: 20px;
-		line-height: 24px;
-	}
-	.md-timeline-content a {
-		text-decoration: none;
-	}
-	.md-timeline-info {
-		height: 20px;
-		width: 100%;
-		margin: 10px 0px;
-	}
-	.md-timeline-info-span {
-		float: right;
-		margin-right: 10px;
-		text-align: right;
-	}
-	.md-timeline-excerpt {
-	    	clear: right; 
-	}
-	@media only screen and (min-width: 1170px) {
-		#md-timeline {
-			margin-top: 3em;
-			margin-bottom: 3em;
-		}
-		#md-timeline::before {
-			left: 50%;
-			margin-left: -2px;
-		}
-	}
-	.md-timeline-block {
-		position: relative;
-		margin: 2em 0;
-	}
-	.md-timeline-block:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-	.md-timeline-block:first-child {
-		margin-top: 0;
-	}
-	.md-timeline-block:last-child {
-		margin-bottom: 0;
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-timeline-block {
-			margin: 4em 0;
-		}
-		.md-timeline-block:first-child {
-			margin-top: 0;
-		}
-		.md-timeline-block:last-child {
-			margin-bottom: 0;
-		}
-	}
-	.md-timeline-date {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 60px;
-		height: 40px;
-		border-radius: box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-	}
-	.md-timeline-date.blue {
-		background: #0D395F;
-		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-timeline-date {
-			width: 60px;
-			height: 60px;
-			left: 50%;
-			margin-left: -30px;
-			/* Force Hardware Acceleration in WebKit */
-			-webkit-transform: translateZ(0);
-			-webkit-backface-visibility: hidden;
-		}
-		.cssanimations .md-timeline-date.is-hidden {
-			visibility: hidden;
-		}
-		.cssanimations .md-timeline-date.bounce-in {
-			visibility: visible;
-			-webkit-animation: md-bounce-1 0.6s;
-			-moz-animation: md-bounce-1 0.6s;
-			animation: md-bounce-1 0.6s;
-		}
-	}
-	@-webkit-keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-webkit-transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: scale(1.2);
-		}
-		100% {
-			-webkit-transform: scale(1);
-		}
-	}
-	@-moz-keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-moz-transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: scale(1.2);
-		}
-		100% {
-			-moz-transform: scale(1);
-		}
-	}
-	@keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-webkit-transform: scale(0.5);
-			-moz-transform: scale(0.5);
-			-ms-transform: scale(0.5);
-			-o-transform: scale(0.5);
-			transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: scale(1.2);
-			-moz-transform: scale(1.2);
-			-ms-transform: scale(1.2);
-			-o-transform: scale(1.2);
-			transform: scale(1.2);
-		}
-		100% {
-			-webkit-transform: scale(1);
-			-moz-transform: scale(1);
-			-ms-transform: scale(1);
-			-o-transform: scale(1);
-			transform: scale(1);
-		}
-	}
-	.md-timeline-content {
-		position: relative;
-		margin-left: 60px;
-		background: white;
-		padding: 1em;
-		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-	}
-	.md-timeline-content:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-	.md-timeline-content h2 {
-		color: #303e49;
-	}
-	.md-timeline-content p, .md-timeline-content .md-read-more, .md-timeline-content .md-date {
-		font-size: 13px;
-		font-size: 0.8125rem;
-	}
-	.md-timeline-content .md-read-more, .md-timeline-content .md-date {
-		display: inline-block;
-	}
-	.md-timeline-content p {
-		margin: 1em 0;
-		line-height: 1.6;
-	}
-	.md-timeline-content .md-read-more {
-		float: right;
-		padding: .8em 1em;
-		background: #acb7c0;
-		color: white;
-		border-radius: 0.25em;
-	}
-	.md-date {
-		color: white;
-		text-align: center;
-	}
-	.no-touch .md-timeline-content .md-read-more:hover {
-		background-color: #bac4cb;
-	}
-	.md-timeline-content::before {
-		content: '';
-		position: absolute;
-		top: 16px;
-		right: 100%;
-		height: 0;
-		width: 0;
-		border: 7px solid transparent;
-		border-right: 7px solid white;
-	}
-	@media only screen and (min-width: 768px) {
-		.md-timeline-content h2 {
-			font-size: 20px;
-			font-size: 1.25rem;
-		}
-		.md-timeline-content p {
-			font-size: 16px;
-			font-size: 1rem;
-		}
-		.md-timeline-content .md-read-more {
-			font-size: 14px;
-			font-size: 0.875rem;
-		}
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-date {
-			text-align: center;
-			margin-top: 10px;
-			line-height: 20px;
-		}
-		.md-timeline-content {
-			margin-left: 0;
-			padding: 1.6em;
-			width: 45%;
-		}
-		.md-timeline-content::before {
-			top: 24px;
-			left: 100%;
-			border-color: transparent;
-			border-left-color: white;
-		}
-		.md-timeline-content .md-read-more {
-			float: left;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content {
-			float: right;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content::before {
-			top: 24px;
-			left: auto;
-			right: 100%;
-			border-color: transparent;
-			border-right-color: white;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content .md-read-more {
-			float: right;
-		}
-		.cssanimations .md-timeline-content.is-hidden {
-			visibility: hidden;
-		}
-		.cssanimations .md-timeline-content.bounce-in {
-			visibility: visible;
-			-webkit-animation: md-bounce-2 0.6s;
-			-moz-animation: md-bounce-2 0.6s;
-			animation: md-bounce-2 0.6s;
-		}
-	}
-	@media only screen and (min-width: 1170px) {
-		/* inverse bounce effect on even content blocks */
-		.cssanimations .md-timeline-block:nth-child(even) .md-timeline-content.bounce-in {
-			-webkit-animation: md-bounce-2-inverse 0.6s;
-			-moz-animation: md-bounce-2-inverse 0.6s;
-			animation: md-bounce-2-inverse 0.6s;
-		}
-	}
-	@-webkit-keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-		}
-	}
-	@-moz-keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-moz-transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: translateX(20px);
-		}
-		100% {
-			-moz-transform: translateX(0);
-		}
-	}
-	@keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(-100px);
-			-moz-transform: translateX(-100px);
-			-ms-transform: translateX(-100px);
-			-o-transform: translateX(-100px);
-			transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(20px);
-			-moz-transform: translateX(20px);
-			-ms-transform: translateX(20px);
-			-o-transform: translateX(20px);
-			transform: translateX(20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-			-moz-transform: translateX(0);
-			-ms-transform: translateX(0);
-			-o-transform: translateX(0);
-			transform: translateX(0);
-		}
-	}
-	@-webkit-keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(-20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-		}
-	}
-	@-moz-keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-moz-transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: translateX(-20px);
-		}
-		100% {
-			-moz-transform: translateX(0);
-		}
-	}
-	@keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(100px);
-			-moz-transform: translateX(100px);
-			-ms-transform: translateX(100px);
-			-o-transform: translateX(100px);
-			transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(-20px);
-			-moz-transform: translateX(-20px);
-			-ms-transform: translateX(-20px);
-			-o-transform: translateX(-20px);
-			transform: translateX(-20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-			-moz-transform: translateX(0);
-			-ms-transform: translateX(0);
-			-o-transform: translateX(0);
-			transform: translateX(0);
-		}
-	}
-</style>
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-<section id="md-timeline" class="md-container">
-   	   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">1月 29 2019</div>
-                		</div>
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/01/29/md5/">Android数据加密：MD5</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">1月 29 2019</div>
-                		</div>
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/01/29/rsa/">Android数据加密：RSA</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">1月 29 2019</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/01/29/aes/">Android数据加密：AES</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">1月 29 2019</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/01/29/base64/">Android数据加密：Base64</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/api/">api</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">1月 29 2019</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/01/29/encryp/">Android数据加密概述</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">1月 08 2019</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/01/08/proxy/">代理模式以及实现onClick事件预处理优化</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>, <a class="category-link" href="/categories/Android/Java/">Java</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/tips/">tips</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">8月 06 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/08/06/java-reflection/">Java反射机制</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Java/">Java</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/api/">api</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">8月 06 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/08/06/annotation/">Annotation</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Java/">Java</a>, <a class="category-link" href="/categories/Java/Kotlin/">Kotlin</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/api/">api</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">7月 31 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/07/31/ioc-onclick/">IoC实现点击事件判断网络、防止连续点击</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>, <a class="category-link" href="/categories/Android/kotlin/">kotlin</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">7月 20 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/07/20/WebView/">WebView POST封装</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>, <a class="category-link" href="/categories/Android/Kotlin/">Kotlin</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/tips/">tips</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">6月 05 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/06/05/runtime-permission/">6.0和8.0运行时权限处理</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/api/">api</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">5月 02 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/05/02/width-length-ems/">width-length-ems</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/tips/">tips</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">4月 26 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/04/26/retrofit-coroutines/">Retrofit+Kotlin协程封装</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>, <a class="category-link" href="/categories/Android/Kotlin/">Kotlin</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/util/">util</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">4月 26 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/04/26/kotlin-coroutines/">Kotlin协程Api用例详解</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>, <a class="category-link" href="/categories/Android/Kotlin/">Kotlin</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/api/">api</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">4月 25 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/04/25/tips-swiperefreshlayout/">源码分析SwipeRefreshLayout子View侧滑冲突（侧滑菜单ListView，ViewPager）</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							<a class="category-link" href="/categories/Android/">Android</a>, <a class="category-link" href="/categories/Android/View/">View</a>
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/tips/">tips</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							文中涉及代码都在我的
-						...
-					</p>
-                    		</div>
-			</div>	
-   			   	  		
-   	</section>
-
-<script type="text/ls-javascript" id="page-timeline-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Android数据加密：Base64
+            </p>
+        </div>
 
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Moodstrikerdd</strong>
+        <span>1月 29, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaElEQVR42u3bW26lMBAE0Lv/Tc8s4ApS5QZDosNXpPDwcSTbqu58/v3p64OHh4eHh4eHh/cy3ie+vu8/esP3+yfP5mPDw8PD28n7Yan9GtDRs0dvO4K195yPDQ8PD28/73wzOF+ykw8fMZLJKsaGh4eH9zJeO6xkiU++hYeHh/d7eckhOMfg4eHh/XbetQM6j2KjUtb+rAUPDw8v5rUFsJ0/P1Dfw8PDwzvltVe7xK+VtUYjxMPDw7uZN2mKykONSdErHy0eHh7eft7dS3x9OA6mGw8PD28/L3nsghbS+B8G2ggYDw8Pbz8vbzZNmlOTaWqbXJOQFw8PD+8pXn7YnQwrCTKSA/0oxsXDw8Mb8NrtoY1c28m6YCLw8PDwtvDaYOKqWGGtqaveGPDw8PBu4LWBaV64Wlvo2+gWDw8P7ynepOQfBazjpgE8PDy89/DaZb0Nf9ttpp0yPDw8vKd4OeZ8Ilpk2261uDHg4eHhXcRbK/nnjVBt7FtsAEkBDA8PD+82XhsK5K1ROSYvg/2w2eDh4eFt5LXFp3Y68iP4aAx4eHh4N/OiNqayeN8W2PJoIwoy8PDw8Lbw2uU4jyfae9bCZTw8PLydvHmEOimP5UfqYsPAw8PDu5l33/F6HgHnv8XDw8PbyVtbjpNAoY1o8zLYqHUADw8P7yJevhlMPt82Y+V/Bjw8PLynePlmkLdqrTW2rsUQeHh4eO/krUW9+ZYzCZHx8PDw3sxLnp03ZrVbAh4eHt5+Xv7htjS11rC11gqGh4eHt4e3VgC7qnEqL6RFk4WHh4d3M+/vXXh4eHh4eHh4eC+4/gPfMXLeCNydwQAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/api/">api</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android数据加密：Base64&url=https://moodstrikerdd.github.io/2019/01/29/base64/index.html&pic=https://moodstrikerdd.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android数据加密：Base64&url=https://moodstrikerdd.github.io/2019/01/29/base64/index.html&via=Moodstrikerdd" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://moodstrikerdd.github.io/2019/01/29/base64/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://moodstrikerdd.github.io/2019/01/29/base64/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=Android数据加密：Base64&summary=Moodstrikerdd的博客&pics=https://moodstrikerdd.github.io/img/favicon.png&url=https://moodstrikerdd.github.io/2019/01/29/base64/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>文中涉及代码都在我的<a href="https://github.com/moodstrikerdd/DemoGo" target="_blank" rel="noopener">github</a>上。如有不足之处，欢迎指正。QQ：542814693。</p>
+<p>Android数据加密相关博客：</p>
+<p><a href="http://moodstrikerdd.github.io/2019/01/29/encryp">Android数据加密概述</a><br><br><a href="http://moodstrikerdd.github.io/2019/01/29/base64">Android数据加密：Base64</a><br><br><a href="http://moodstrikerdd.github.io/2019/01/29/aes">Android数据加密：AES</a><br><br><a href="http://moodstrikerdd.github.io/2019/01/29/rsa">Android数据加密：RSA</a><br><br><a href="http://moodstrikerdd.github.io/2019/01/29/md5">Android数据加密：MD5</a><br></p>
+<h3 id="Base64概述"><a href="#Base64概述" class="headerlink" title="Base64概述"></a>Base64概述</h3><p>Base64是网络上最常见的用于传输8Bit字节码的编码方式之一，Base64就是一种基于64个可打印字符来表示二进制数据的方法。<strong>Base64不是加密算法</strong>，一般配合数据加密算法实现数据加密传输。</p>
+<p>对应表如下：</p>
+<p><div align="center"><img src="/2019/01/29/base64/base64.png" alt=""></div></p>
+<h3 id="Base64规则"><a href="#Base64规则" class="headerlink" title="Base64规则"></a>Base64规则</h3><p>1.标准Base64只有64个字符（英文大小写、数字和+、/）以及用作后缀等号”=”。<br>2.Base64是把3个字节变成4个可打印字符，所以Base64编码后的字符串一定能被4整除（不算用作后缀的等号）。<br>3.等号一定用作后缀，且数目一定是0个、1个或2个。这是因为如果原文字节长度不能被3(6和8的最小公倍数为24对应3个字节)整除，Base64要在后面添加0凑齐3n位。为了正确还原，添加了几个0就加上几个等号。显然添加等号的数目只能是0、1或2。<br>4.根据RFC822规定，BASE64Encoder编码每76个字符，还需要加上一个回车换行。</p>
+<h3 id="Base64步骤及示例"><a href="#Base64步骤及示例" class="headerlink" title="Base64步骤及示例"></a>Base64步骤及示例</h3><p>1.将被编码数据转换成二进制。<br>2.二进制字节数不是24的倍数则末位补0（二进制为00000000）直到字节数是24的倍数。<br>3.将补全后的二进制数据6个字节一组分组。<br>4.每组数据高位补两个0形成新的二进制数据。<br>5.对照Base64编码表转义成可见字符，第二步添加了多少位二进制数据0，末位相应数量的0则转义成=，其余的0转义成A。</p>
+<p>示例一：</p>
+<p><div align="center"><img src="/2019/01/29/base64/base64_1.png" alt=""></div></p>
+<p>示例二：</p>
+<p><div align="center"><img src="/2019/01/29/base64/base64_2.png" alt=""></div></p>
+<h3 id="Android中的Base64"><a href="#Android中的Base64" class="headerlink" title="Android中的Base64"></a>Android中的Base64</h3><pre><code>        val a = &quot;@&quot;
+        val b = &quot;Man&quot;
+
+        String(Base64.encode(a.toByteArray(), Base64.DEFAULT)) //QA==
+        val message = String(Base64.encode(b.toByteArray(), Base64.DEFAULT)) //TWFu
+
+        String(Base64.decode(message, Base64.DEFAULT))//Man
+</code></pre><h4 id="Base64参数说明"><a href="#Base64参数说明" class="headerlink" title="Base64参数说明"></a>Base64参数说明</h4><p>1.DEFAULT 这个参数是默认，使用默认的方法来加密</p>
+<p>2.NO_PADDING 这个参数是略去加密字符串最后的”=”</p>
+<p>3.NO_WRAP 这个参数意思是略去所有的换行符（设置后CRLF就没用了）</p>
+<p>4.CRLF 这个参数看起来比较眼熟，它就是Win风格的换行符，意思就是使用CR LF这一对作为一行的结尾而不是Unix风格的LF</p>
+<p>5.URL_SAFE 这个参数意思是加密时不使用对URL和文件名有特殊意义的字符来作为加密字符，具体就是以-和_取代+和/</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            版权声明：本文为博主原创文章，未经博主允许不得转载。
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://moodstrikerdd.github.io/2019/01/29/base64/">https://moodstrikerdd.github.io/2019/01/29/base64/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/01/29/aes/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/01/29/encryp/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -1234,6 +762,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
