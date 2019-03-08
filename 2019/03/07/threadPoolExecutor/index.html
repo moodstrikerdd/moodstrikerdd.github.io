@@ -43,7 +43,7 @@
     
     <title>
         
-            Annotation | 
+            ThreadPoolExecutor使用 | 
         
         Moodstrikerdd
     </title>
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Moodstrikerdd">
-    <meta name="msapplication-starturl" content="https://moodstrikerdd.github.io/2018/08/06/annotation/">
+    <meta name="msapplication-starturl" content="https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Moodstrikerdd">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://moodstrikerdd.github.io/2018/08/06/annotation/">
+    <meta property="og:url" content="https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Annotation | Moodstrikerdd">
+    <meta property="og:title" content="ThreadPoolExecutor使用 | Moodstrikerdd">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Moodstrikerdd的博客">
     <meta property="og:article:tag" content="api"> 
 
     
-        <meta property="article:published_time" content="Mon Aug 06 2018 16:29:56 GMT+0800">
-        <meta property="article:modified_time" content="Thu Dec 27 2018 11:56:46 GMT+0800">
+        <meta property="article:published_time" content="Thu Mar 07 2019 14:17:57 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 08 2019 14:22:53 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://moodstrikerdd.github.io/2018/08/06/annotation/index.html" />
+        <link rel="canonical" href="https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://moodstrikerdd.github.io/2018/08/06/annotation/index.html",
-    "headline": "Annotation",
-    "datePublished": "Mon Aug 06 2018 16:29:56 GMT+0800",
-    "dateModified": "Thu Dec 27 2018 11:56:46 GMT+0800",
+    "mainEntityOfPage": "https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/index.html",
+    "headline": "ThreadPoolExecutor使用",
+    "datePublished": "Thu Mar 07 2019 14:17:57 GMT+0800",
+    "dateModified": "Fri Mar 08 2019 14:22:53 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Moodstrikerdd",
@@ -347,7 +347,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Annotation定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">Annotation定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Annotation示例"><span class="post-toc-number">2.</span> <span class="post-toc-text">Annotation示例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Annotation组成"><span class="post-toc-number">3.</span> <span class="post-toc-text">Annotation组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Target"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Target</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Retention"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Retention</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#属性"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Annotation与反射"><span class="post-toc-number">4.</span> <span class="post-toc-text">Annotation与反射</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Kotlin-Annotation-扩展"><span class="post-toc-number">5.</span> <span class="post-toc-text">Kotlin Annotation 扩展</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ThreadPoolExecutor简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">ThreadPoolExecutor简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ThreadPoolExecutor构造函数"><span class="post-toc-number">2.</span> <span class="post-toc-text">ThreadPoolExecutor构造函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ThreadPoolExecutor源码分期工作流程"><span class="post-toc-number">3.</span> <span class="post-toc-text">ThreadPoolExecutor源码分期工作流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#execute"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">execute</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#addWorker"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">addWorker</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#submit"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">submit</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用的线程池"><span class="post-toc-number">4.</span> <span class="post-toc-text">常用的线程池</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#newFixedThreadPool"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">newFixedThreadPool</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#newSingleThreadExecutor"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">newSingleThreadExecutor</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#newCachedThreadPool"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">newCachedThreadPool</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#newScheduledThreadPool"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">newScheduledThreadPool</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程池规范"><span class="post-toc-number">5.</span> <span class="post-toc-text">线程池规范</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实例化对象"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">实例化对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#线程池大小选取"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">线程池大小选取</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -379,7 +379,7 @@
         
     
             <p class="article-headline-p">
-                Annotation
+                ThreadPoolExecutor使用
             </p>
         </div>
 
@@ -398,7 +398,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Moodstrikerdd</strong>
-        <span>8月 06, 2018</span>
+        <span>3月 07, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -420,7 +420,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3ay27DMAwEwPz/T7fXAoWTXcoIDGl8Cho/NO6BIVevnyOPFzY2NjY2NjY2NvYj2a/4iG7958zk2qtv/197ded8zdjY2Nh7s3NMQm1fyoflvn0F+ZqxsbGxT2BfPT75nBSw5Pz3xXW2ZmxsbGzspMG4ump2z6SkYWNjY2PfVcBWGomV0oiNjY2NPRvQJLFBHjAMx0Pfn6VhY2NjP56dh6bP+fzVfBsbGxv7wez2mAWu719ie8/hyrGxsbE3Zc+20bRtSfsS2wA42uiJjY2NvSn7/Sg/PzMPg/M2ox0tffgHYGNjY2/KTtqAenyz3HjcNWbCxsbGPo3dFrMcnJ/TtkZ5C4SNjY19DntlKe2xHuIu5dvY2NjYG7GLIfvCt/kwaDZUqoNebGxs7I3Y+TCo+Ok/igeSlbSjK2xsbOxz2CtR7myjT7uSPBLGxsbGPoedLHplqJQHxvlK2hgYGxsbe292Hru2G2VmDUw7isrDaWxsbOxd2XmTkBekZOltMWvblahuY2NjY2/Bno1sioeNYoB8jFUUPGxsbOyt2bPNMfeGxLPGpiif2NjY2Juy7ypXLSwZ7q+UK2xsbOyT2TlmttWm3bizUtKwsbGxT2DnEexdY6N8i08S/RaNEzY2Nvam7FnxaLf1JN/mr2PYDmFjY2Nvys4HN7Nxf/KXfMw0izGwsbGxT2bXP/dLWPvKljYAYWNjYx/Absf6eUzblsCVEnvpwsbGxj6MfdermTUwyR3yNgYbGxt7b3Z7tI1EG9DmIUT+RGxsbOy92bPNNCuw73/GxsbGPoHdjnWSEVK7mXJWOJcKGDY2NvZ27OGwJt4Qnw+GZpvvl/JtbGxs7MPYeQy8Es3m5XMp6MXGxsY+nj1bymzps2YJGxsb+xx2XlqKshG0McnT29EVNjY29mnsdnCTLGjlnBxZXIuNjY29KfucAxsbGxsbGxsbG/sxxy/NDnIU4f7BvAAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzElEQVR42u3awU4rQQwEwPz/T8MVCbK07RUJ49rTE0oyW3Pxs9uPj5XPAxsbGxsbGxsbG/st2Y/4+fr56neTb33//aeA4onY2NjYG9jJMd+PvP6FHw5+9kKXl/LsM/k7Y2NjY+9h94rW9XVM/nLXNWFjY2NjXx+cFJUckPw+NjY2Nva9BaxXfnotEDY2Njb2fKiUjJbyAdCkaP3pLA0bGxv77dmToPdV/35xvo2NjY39NuzJc2+rkDczzbfFxsbGPpR93WZMilm+ytNrePIrxsbGxt7AzpdpeoFBfsUJIA+PsbGxsbex58s0946rqiuYzXgAGxsb+5+ze6Of6yI3/0u1vDXjAWxsbOwj2Pngpvda+XpQ/q0kNsDGxsbexp5fweQz1WutnoWNjY29gZ3/d7+60JO3EHddzW1BLzY2NvY/YedrNL0yc1drUV0SwsbGxt7GzkOC3sG9ItSLlrGxsbG3sedtRjUGmDcz1evAxsbG3sCuHpYP6ycLl0m5KrRA2NjY2CvZ+fG9IdRk8ISNjY2NnYQESYzai2zzAGASFWNjY2NvYF//dLVQVZ+8veldEzY2NvYedhWQNxvJS1fP7UUF2NjY2Keyq6FvXmbm46r51WBjY2PvYSflode0VNdrqtFvvh6EjY2NfSo7/7kc2YsH5os+2NjY2JvZecTbG+tUR/y9BuaXt8XGxsY+ml0dMM1frloa8/WdciqCjY2NfRy7uvJYjWaTC80Lah4SYGNjY5/Krj55y5GECknk0BtFYWNjY+9hTxYuq0OlyaD/hhgDGxsb+2h2XrQmQ6LrEtUsS/kyEDY2NvYC9mTZMS9+1SuejK6wsbGxsfPAtVcUqytBvXYFGxsbG7sKy8PjpNloNh7Y2NjYK9n5YXnEW2XnQ6u8BcLGxsbewK4GvdWLqw6n8mFTIbTAxsbGPpS958HGxsbGxsbGxsZ+m+cTUG577l7UjHkAAAAASUVORK5CYII=">
     
 </ul>
 
@@ -451,7 +451,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Annotation&url=https://moodstrikerdd.github.io/2018/08/06/annotation/index.html&pic=https://moodstrikerdd.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ThreadPoolExecutor使用&url=https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/index.html&pic=https://moodstrikerdd.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -460,7 +460,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Annotation&url=https://moodstrikerdd.github.io/2018/08/06/annotation/index.html&via=Moodstrikerdd" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ThreadPoolExecutor使用&url=https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/index.html&via=Moodstrikerdd" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -469,7 +469,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://moodstrikerdd.github.io/2018/08/06/annotation/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -478,7 +478,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://moodstrikerdd.github.io/2018/08/06/annotation/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -490,7 +490,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=Annotation&summary=Moodstrikerdd的博客&pics=https://moodstrikerdd.github.io/img/favicon.png&url=https://moodstrikerdd.github.io/2018/08/06/annotation/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Moodstrikerdd&title=ThreadPoolExecutor使用&summary=Moodstrikerdd的博客&pics=https://moodstrikerdd.github.io/img/favicon.png&url=https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -510,224 +510,275 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>文中涉及代码都在我的<a href="https://github.com/moodstrikerdd/DemoGo" target="_blank" rel="noopener">github</a>上。如有不足之处，欢迎指正。QQ：542814693。</p>
-<h3 id="Annotation定义"><a href="#Annotation定义" class="headerlink" title="Annotation定义"></a>Annotation定义</h3><p>java.lang.annotation，接口 Annotation。对于Annotation，是Java5的新特性，JDK5引入了Metadata（元数据）很容易的就能够调用Annotations。Annotations提供一些本来不属于程序的数据，比如：一段代码的作者或者告诉编译器禁止一些特殊的错误。An annotation 对代码的执行没有什么影响。Annotations使用@annotation的形式应用于代码：类(class),属性(attribute),方法(method)等等。一个Annotation出现在上面提到的开始位置，而且一般只有一行，也可以包含有任意的参数。</p>
-<h3 id="Annotation示例"><a href="#Annotation示例" class="headerlink" title="Annotation示例"></a>Annotation示例</h3><pre><code>//java中的Annotation
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.CLASS)
-public @interface MyAnnotation {
-}
-//kotlin中的Annotation
-@Retention(AnnotationRetention.RUNTIME)
-@Target(AnnotationTarget.FUNCTION,AnnotationTarget.CLASS)
-annotation class OnClick(vararg val value: Int)
-</code></pre><h3 id="Annotation组成"><a href="#Annotation组成" class="headerlink" title="Annotation组成"></a>Annotation组成</h3><h4 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h4><p>Target用来指定Annotation的类型，表明Annotation可以用在什么地方，一个Annotation可以有多个Target的值，表示可以用在不同的地方。java中的参数为ElementType，kotlin中的参数为AnnotationTarget。</p>
-<pre><code>//java中的Target
-public enum ElementType {
-    ANNOTATION_TYPE,    //注解
-    CONSTRUCTOR,        //构造函数
-    FIELD,              //字段（包括枚举常量）
-    LOCAL_VARIABLE,     //局部变量
-    METHOD,             //方法
-    PACKAGE,            //包
-    PARAMETER,          //参数
-    TYPE,               //类、接口（包括注解类型）或枚举
-    TYPE_PARAMETER,
-    TYPE_USE;
+<h3 id="ThreadPoolExecutor简介"><a href="#ThreadPoolExecutor简介" class="headerlink" title="ThreadPoolExecutor简介"></a>ThreadPoolExecutor简介</h3><p>线程池（ThreadPoolExecutor）是一种多线程处理形式，在线程池内有几个重要的元素，核心线程数，最大线程数，任务阻塞队列，拒绝策略。<br><img src="/2019/03/07/threadPoolExecutor/4.png" alt=""></p>
+<h3 id="ThreadPoolExecutor构造函数"><a href="#ThreadPoolExecutor构造函数" class="headerlink" title="ThreadPoolExecutor构造函数"></a>ThreadPoolExecutor构造函数</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadPoolExecutor</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractExecutorService</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">///.....</span>
+    <span class="token keyword">public</span> <span class="token function">ThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token keyword">int</span> corePoolSize<span class="token punctuation">,</span><span class="token keyword">int</span> maximumPoolSize<span class="token punctuation">,</span><span class="token keyword">long</span> keepAliveTime<span class="token punctuation">,</span>TimeUnit unit<span class="token punctuation">,</span>
+            BlockingQueue<span class="token operator">&lt;</span>Runnable<span class="token operator">></span> workQueue<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    private ElementType() {
+    <span class="token keyword">public</span> <span class="token function">ThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token keyword">int</span> corePoolSize<span class="token punctuation">,</span><span class="token keyword">int</span> maximumPoolSize<span class="token punctuation">,</span><span class="token keyword">long</span> keepAliveTime<span class="token punctuation">,</span>TimeUnit unit<span class="token punctuation">,</span>
+            BlockingQueue<span class="token operator">&lt;</span>Runnable<span class="token operator">></span> workQueue<span class="token punctuation">,</span>ThreadFactory threadFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">ThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token keyword">int</span> corePoolSize<span class="token punctuation">,</span><span class="token keyword">int</span> maximumPoolSize<span class="token punctuation">,</span><span class="token keyword">long</span> keepAliveTime<span class="token punctuation">,</span>TimeUnit unit<span class="token punctuation">,</span>
+            BlockingQueue<span class="token operator">&lt;</span>Runnable<span class="token operator">></span> workQueue<span class="token punctuation">,</span>RejectedExecutionHandler handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">ThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token keyword">int</span> corePoolSize<span class="token punctuation">,</span><span class="token keyword">int</span> maximumPoolSize<span class="token punctuation">,</span><span class="token keyword">long</span> keepAliveTime<span class="token punctuation">,</span>TimeUnit unit<span class="token punctuation">,</span>
+        BlockingQueue<span class="token operator">&lt;</span>Runnable<span class="token operator">></span> workQueue<span class="token punctuation">,</span>ThreadFactory threadFactory<span class="token punctuation">,</span>RejectedExecutionHandler handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//...</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>构造函数中最终都是调用了最后一个参数最多的构造函数。<br>1.corePoolSize：核心线程数<br>2.maximumPoolSize：线程池最大线程数<br>3.keepAliveTime：表示线程没有任务执行时最多保持多久时间会终止。默认情况下，只有当线程池中的线程数大于corePoolSize时，keepAliveTime才会起作用，直到线程池中的线程数不大于corePoolSize，即当线程池中的线程数大于corePoolSize时，如果一个线程空闲的时间达到keepAliveTime，则会终止，直到线程池中的线程数不超过corePoolSize。但是如果调用了allowCoreThreadTimeOut(boolean)方法，在线程池中的线程数不大于corePoolSize时，keepAliveTime参数也会起作用，直到线程池中的线程数为0；<br>4.unit：参数keepAliveTime的时间单位</p>
+<pre><code>TimeUnit.DAYS;               //天
+TimeUnit.HOURS;             //小时
+TimeUnit.MINUTES;           //分钟
+TimeUnit.SECONDS;           //秒
+TimeUnit.MILLISECONDS;      //毫秒
+TimeUnit.MICROSECONDS;      //微妙
+TimeUnit.NANOSECONDS;       //纳秒
+</code></pre><p>5.workQueue:任务阻塞队列</p>
+<pre><code>//常用阻塞队列
+ArrayBlockingQueue;//是一个用数组实现的有界阻塞队列，此队列按照先进先出（FIFO）的原则对元素进行排序。
+LinkedBlockingQueue;//是一个链表实现的有界阻塞队列，此队列按照先进先出（FIFO）的原则对元素进行排序。
+SynchronousQueue;//一个不存储元素的阻塞队列，每一个put操作必须等待take操作，否则不能添加元素。
+
+</code></pre><p>6.threadFactory：线程工厂，主要用来创建线程，可自定义。</p>
+<pre><code>    new ThreadFactory() {
+        private AtomicInteger threadCount = new AtomicInteger(1);
+            @Override
+            public Thread newThread(@NonNull Runnable r) {
+                return new Thread(new ThreadGroup(&quot;abc&quot;),
+                                                       r,
+                                 &quot;DemoGo Thread &quot; + threadCount.getAndIncrement());
+            }
     }
-}
+</code></pre><p>7.handler：拒绝策略</p>
+<pre><code>ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常。 
+ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常。 
+ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）
+ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务 
+</code></pre><h3 id="ThreadPoolExecutor源码分期工作流程"><a href="#ThreadPoolExecutor源码分期工作流程" class="headerlink" title="ThreadPoolExecutor源码分期工作流程"></a>ThreadPoolExecutor源码分期工作流程</h3><h4 id="execute"><a href="#execute" class="headerlink" title="execute"></a>execute</h4><pre><code>public void execute(Runnable command) {
+        if (command == null)
+            throw new NullPointerException();
+        /*
+         * Proceed in 3 steps:
+         *
+         * 1. If fewer than corePoolSize threads are running, try to
+         * start a new thread with the given command as its first
+         * task.  The call to addWorker atomically checks runState and
+         * workerCount, and so prevents false alarms that would add
+         * threads when it shouldn&#39;t, by returning false.
+         * 2. If a task can be successfully queued, then we still need
+         * to double-check whether we should have added a thread
+         * (because existing ones died since last checking) or that
+         * the pool shut down since entry into this method. So we
+         * recheck state and if necessary roll back the enqueuing if
+         * stopped, or start a new thread if there are none.
+         * 3. If we cannot queue task, then we try to add a new
+         * thread.  If it fails, we know we are shut down or saturated
+         * and so reject the task.
+　　　　　　 
 
-//kotlin中的target
-public enum class AnnotationTarget {
-    /** Class, interface or object, annotation class is also included */
-    CLASS,
-    /** Annotation class only */
-    ANNOTATION_CLASS,
-    /** Generic type parameter (unsupported yet) */
-    TYPE_PARAMETER,
-    /** Property */
-    PROPERTY,
-    /** Field, including property&#39;s backing field */
-    FIELD,
-    /** Local variable */
-    LOCAL_VARIABLE,
-    /** Value parameter of a function or a constructor */
-    VALUE_PARAMETER,
-    /** Constructor only (primary or secondary) */
-    CONSTRUCTOR,
-    /** Function (constructors are not included) */
-    FUNCTION,
-    /** Property getter only */
-    PROPERTY_GETTER,
-    /** Property setter only */
-    PROPERTY_SETTER,
-    /** Type usage */
-    TYPE,
-    /** Any expression */
-    EXPRESSION,
-    /** File */
-    FILE,
-    /** Type alias */
-    @SinceKotlin(&quot;1.1&quot;)
-    TYPEALIAS
-}
-</code></pre><h4 id="Retention"><a href="#Retention" class="headerlink" title="Retention"></a>Retention</h4><p>Retention中的参数表示注解保留策略，一个Annotataion只能有一个Retention。此枚举类型的常量描述保留注解的不同策略，指定保留多长的注解。</p>
-<pre><code>//java中的Retention
-public enum RetentionPolicy {
-    CLASS,//编译器将注解存储于类对应的.class文件中，但是在运行时不能通过JVM读取（默认模式）
-    RUNTIME,//编译器将注解存储于.class文件中，并且可由反射获取
-    SOURCE;//编译器处理完之后就被抛弃
-
-    private RetentionPolicy() {
+         */
+　　　　
+　　　　// 1.当前线程数量小于corePoolSize，则创建并启动线程。
+        int c = ctl.get();
+        if (workerCountOf(c) &lt; corePoolSize) {
+            if (addWorker(command, true))
+　　　　　　　　// 成功，则返回
+                return;
+            c = ctl.get();
+        }
+　　　　// 2.步骤1失败，则尝试进入阻塞队列，
+        if (isRunning(c) &amp;&amp; workQueue.offer(command)) {
+　　　　　　　// 入队列成功，检查线程池状态，如果状态部署RUNNING而且remove成功，则拒绝任务
+            int recheck = ctl.get();
+            if (! isRunning(recheck) &amp;&amp; remove(command))
+                reject(command);
+　　　　　　　// 如果当前worker数量为0，通过addWorker(null, false)创建一个线程，其任务为null
+            else if (workerCountOf(recheck) == 0)
+                addWorker(null, false);
+        }
+　　　　// 3. 步骤1和2失败，则尝试将线程池的数量有corePoolSize扩充至maxPoolSize，如果失败，则拒绝任务
+        else if (!addWorker(command, false))
+            reject(command);
     }
-}
-//kotlin中的Retention
-public enum class AnnotationRetention {
-    /** Annotation isn&#39;t stored in binary output (同java中的SOURCE)*/
-    SOURCE,
-    /** Annotation is stored in binary output, but invisible for reflection(同java中的CLASS) */
-    BINARY,
-    /** Annotation is stored in binary output and visible for reflection (同java中的RUNTIME，默认模式) */
-    RUNTIME
-}
-</code></pre><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>注解的属性也叫做成员变量。注解只有成员变量，没有方法。注解的成员变量在注解的定义中以“无形参的方法”形式来声明，其方法名定义了该成员变量的名字，其返回值定义了该成员变量的类型。</p>
-<pre><code>//java中注解的参数
-@Retention(RetentionPolicy.CLASS)
-@Target({ElementType.TYPE, ElementType.METHOD})
-public @interface JavaNetCheck {
+</code></pre><p>execute总结：<br>1.如果正在运行的线程数小于corePoolSize，那么将调用addWorker 方法来创建一个新的线程，并将该任务作为新线程的第一个任务来执行。当然，在创建线程之前会做原子性质的检查，如果条件不允许，则不创建线程来执行任务，并返回false.<br>2.如果一个任务成功进入阻塞队列，那么我们需要进行一个双重检查来确保是我们已经添加一个线程（因为存在着一些线程在上次检查后他已经死亡）或者当我们进入该方法时，该线程池已经关闭。所以，我们将重新检查状态，线程池关闭的情况下则回滚入队列，线程池没有线程的情况则创建一个新的线程。<br>3.如果任务无法入队列（队列满了），那么我们将尝试新开启一个线程（从corepoolsize到扩充到maximum），如果失败了，那么可以确定原因，要么是线程池关闭了或者饱和了（达到maximum），所以我们执行拒绝策略。</p>
+<h4 id="addWorker"><a href="#addWorker" class="headerlink" title="addWorker"></a>addWorker</h4><pre><code>private boolean addWorker(Runnable firstTask, boolean core) {
+        retry:
+　　　　 // 外层循环，用于判断线程池状态
+        for (;;) {
+            int c = ctl.get();
+            int rs = runStateOf(c);
 
-    int[] id();
-
-    String message();
-}
-
-//kotlin中注解的参数
-@Retention(AnnotationRetention.RUNTIME)
-@Target(AnnotationTarget.FUNCTION)
-annotation class CheckNet(vararg val id: Int,val message:String)
-
-</code></pre><p>使用注解时，以key = value的形式传入相应的参数。</p>
-<pre><code> @CheckNet(R.id.btnClick1,R.id.btnClick2, message = &quot;网络连接失败！&quot;)
- @JavaNetCheck(id = [R.id.btnClick1,R.id.btnClick2],message = &quot;网络连接失败！&quot;)
- private fun onClick(view: View) {
-    toast(&quot;${(view as Button).text}被点击了！&quot;)
- }
-</code></pre><p>java中如果参数名为value，则可以省略“value =”，直接赋值</p>
-<pre><code>@Retention(RetentionPolicy.CLASS)
-@Target({ElementType.TYPE, ElementType.METHOD})
-public @interface JavaNetCheck {
-
-    int[] value();
-
-    String message();
-}
-
-@JavaNetCheck(R.id.btnClick1,R.id.btnClick2,message = &quot;网络连接失败！&quot;)
-private fun onClick(view: View) {
-    toast(&quot;${(view as Button).text}被点击了！&quot;)
-}
-</code></pre><p>同时，注解中的属性可以设置默认值，java使用default关键字，kotlin直接在参数列表中赋值默认值，在使用的时候该参数就为非必传参数，不传该参数的时候使用默认值。</p>
-<pre><code>@Retention(RetentionPolicy.CLASS)
-@Target({ElementType.TYPE, ElementType.METHOD})
-public @interface JavaNetCheck {
-
-    int[] id();
-
-    String message() default &quot;网络连接失败！&quot;;
-}
-
-@Retention(AnnotationRetention.RUNTIME)
-@Target(AnnotationTarget.FUNCTION)
-annotation class CheckNet(vararg val id: Int,val message :String = &quot;网络连接失败！&quot;)
-
-@CheckNet(R.id.btnClick1,R.id.btnClick2)
-@JavaNetCheck(id = [R.id.btnClick1,R.id.btnClick2])
-private fun onClick(view: View) {
-    toast(&quot;${(view as Button).text}被点击了！&quot;)
-}
-</code></pre><h3 id="Annotation与反射"><a href="#Annotation与反射" class="headerlink" title="Annotation与反射"></a>Annotation与反射</h3><p>了解了Annotation的基本内容，如果Annotation只是给编写代码的人注解标记，并不需要如此大费周章，注解的用途还是给java程序进行注解，标记。java提供了一个接口来获取注解的实例。</p>
-<pre><code>public interface AnnotatedElement {
-    default boolean isAnnotationPresent(Class&lt;? extends Annotation&gt; var1) {
-        return this.getAnnotation(var1) != null;
-    }
-
-    &lt;T extends Annotation&gt; T getAnnotation(Class&lt;T&gt; var1);
-
-    Annotation[] getAnnotations();
-
-    default &lt;T extends Annotation&gt; T[] getAnnotationsByType(Class&lt;T&gt; var1) {
-        Annotation[] var2 = this.getDeclaredAnnotationsByType(var1);
-        if(var2.length == 0 &amp;&amp; this instanceof Class &amp;&amp; AnnotationType.getInstance(var1).isInherited()) {
-            Class var3 = ((Class)this).getSuperclass();
-            if(var3 != null) {
-                var2 = var3.getAnnotationsByType(var1);
+            // Check if queue empty only if necessary.
+            if (rs &gt;= SHUTDOWN &amp;&amp;
+                ! (rs == SHUTDOWN &amp;&amp;
+                   firstTask == null &amp;&amp;
+                   ! workQueue.isEmpty()))
+                return false;
+　　　　　　 // 内层的循环，任务是将worker数量加1
+            for (;;) {
+                int wc = workerCountOf(c);
+                if (wc &gt;= CAPACITY ||
+                    wc &gt;= (core ? corePoolSize : maximumPoolSize))
+                    return false;
+                if (compareAndIncrementWorkerCount(c))
+                    break retry;
+                c = ctl.get();  // Re-read ctl
+                if (runStateOf(c) != rs)
+                    continue retry;
+                // else CAS failed due to workerCount change; retry inner loop
             }
         }
+　　　　// worker加1后，接下来将woker添加到HashSet&lt;Worker&gt;中，并启动worker
+        boolean workerStarted = false;
+        boolean workerAdded = false;
+        Worker w = null;
+        try {
+            final ReentrantLock mainLock = this.mainLock;
+            w = new Worker(firstTask);
+            final Thread t = w.thread;
+            if (t != null) {
+                mainLock.lock();
+                try {
+                    // Recheck while holding lock.
+                    // Back out on ThreadFactory failure or if
+                    // shut down before lock acquired.
+                    int c = ctl.get();
+                    int rs = runStateOf(c);
 
-        return var2;
+                    if (rs &lt; SHUTDOWN ||
+                        (rs == SHUTDOWN &amp;&amp; firstTask == null)) {
+                        if (t.isAlive()) // precheck that t is startable
+                            throw new IllegalThreadStateException();
+                        workers.add(w);
+                        int s = workers.size();
+                        if (s &gt; largestPoolSize)
+                            largestPoolSize = s;
+                        workerAdded = true;
+                    }
+                } finally {
+                    mainLock.unlock();
+                }
+　　　　　　　　　// 如果往HashSet&lt;Worker&gt;添加成功，则启动该线程
+                if (workerAdded) {
+                    t.start();
+                    workerStarted = true;
+                }
+            }
+        } finally {
+            if (! workerStarted)
+                addWorkerFailed(w);
+        }
+        return workerStarted;
+    }
+</code></pre><p>addWork总结：<br>1、判断线程池当前是否为可以添加worker线程的状态，可以则继续下一步，不可以return false：<br>    A、线程池状态&gt;shutdown，可能为stop、tidying、terminated，不能添加worker线程<br>    B、线程池状态==shutdown，firstTask不为空，不能添加worker线程，因为shutdown状态的线程池不接收新任务<br>    C、线程池状态==shutdown，firstTask==null，workQueue为空，不能添加worker线程，因为firstTask为空是为了添加一个没有任务的线程再从workQueue获取task，而workQueue为  　　　　空，说明添加无任务线程已经没有意义<br>2、线程池当前线程数量是否超过上限（corePoolSize 或 maximumPoolSize），超过了return false，没超过则对workerCount+1，继续下一步<br>3、在线程池的ReentrantLock保证下，向Workers Set中添加新创建的worker实例，添加完成后解锁，并启动worker线程，如果这一切都成功了，return true，如果添加worker入Set失败或启动失败，调用addWorkerFailed()逻辑</p>
+<h4 id="submit"><a href="#submit" class="headerlink" title="submit"></a>submit</h4><p>submit不是ThreadPoolExecutor的方法，而是父类AbstractExecutorService的方法。</p>
+<pre><code>    public Future&lt;?&gt; submit(Runnable task) {
+        if (task == null) throw new NullPointerException();
+        RunnableFuture&lt;Void&gt; ftask = newTaskFor(task, null);
+        execute(ftask);
+        return ftask;
     }
 
-    default &lt;T extends Annotation&gt; T getDeclaredAnnotation(Class&lt;T&gt; annotationClass) {
-        Objects.requireNonNull(annotationClass);
-        // Loop over all directly-present annotations looking for a matching one
-           for (Annotation annotation : getDeclaredAnnotations()) {
-               if (annotationClass.equals(annotation.annotationType())) {
-                    // More robust to do a dynamic cast at runtime instead
-                    // of compile-time only.
-                    return annotationClass.cast(annotation);
-               }
-           }
-        return null;
+    public &lt;T&gt; Future&lt;T&gt; submit(Runnable task, T result) {
+        if (task == null) throw new NullPointerException();
+        RunnableFuture&lt;T&gt; ftask = newTaskFor(task, result);
+        execute(ftask);
+        return ftask;
     }
 
-    default &lt;T extends Annotation&gt; T[] getDeclaredAnnotationsByType(Class&lt;T&gt; annotationClass) {
-        return AnnotatedElements.getDirectOrIndirectAnnotationsByType(this, annotationClass);
+    public &lt;T&gt; Future&lt;T&gt; submit(Callable&lt;T&gt; task) {
+        if (task == null) throw new NullPointerException();
+        RunnableFuture&lt;T&gt; ftask = newTaskFor(task);
+        execute(ftask);
+        return ftask;
+    }
+</code></pre><p>可见submit方法实例化并返回的是一个RunnableFuture实例。</p>
+<pre><code>    public FutureTask(Callable&lt;V&gt; callable) {
+        if (callable == null)
+            throw new NullPointerException();
+        this.callable = callable;
+        this.state = NEW;       // ensure visibility of callable
     }
 
-    Annotation[] getDeclaredAnnotations();
+    public FutureTask(Runnable runnable, V result) {
+        this.callable = Executors.callable(runnable, result); //将runnable对象转化成callable对象
+        this.state = NEW;       // ensure visibility of callable
+    }
+
+    public static &lt;T&gt; Callable&lt;T&gt; callable(Runnable task, T result) {
+            if (task == null)
+                throw new NullPointerException();
+            return new RunnableAdapter&lt;T&gt;(task, result);
+    }
+
+    private static final class RunnableAdapter&lt;T&gt; implements Callable&lt;T&gt; {
+            private final Runnable task;
+            private final T result;
+            RunnableAdapter(Runnable task, T result) {
+                this.task = task;
+                this.result = result;
+            }
+            public T call() {
+                task.run();
+                return result;
+            }
+        }
+</code></pre><p>在RunnableFuture中主要的属性为Callable<v> callable。</v></p>
+<pre><code>public interface Callable&lt;V&gt; {
+    /**
+     * Computes a result, or throws an exception if unable to do so.
+     *
+     * @return computed result
+     * @throws Exception if unable to compute a result
+     */
+    V call() throws Exception;
 }
-</code></pre><p>AnnotatedElement常用的方法</p>
-<p>1.isAnnotationPresent()方法可以判断该元素是否拥有指定注解类的注解，</p>
-<p>2.getAnnotation(Class<t> var1) 则返回指定注解类的注解，</t></p>
-<p>3.getAnnotations()则会返回所有的注解。</p>
-<p>实现了这个接口的类有: Class,Constructor,Executable,Field,Method,Package,Parameter,AccessibleObject这些类都位于java.lang.reflect包，这意味着我们的程序需要通过反射来识别注解。</p>
-<pre><code>val onClick = method.getAnnotation(OnClick::class.java)
-if (onClick != null) {
-     val values = onClick.value
-     ... ...
+</code></pre><p>通过RunnableFuture对象的get方法就可以获得返回结果。get方法是一个线程阻塞方法。</p>
+<pre><code>    public V get() throws InterruptedException, ExecutionException {
+        int s = state;
+        if (s &lt;= COMPLETING)
+            s = awaitDone(false, 0L);//死循查询并等待rannable任务执行完成
+        return report(s);
     }
-</code></pre><h3 id="Kotlin-Annotation-扩展"><a href="#Kotlin-Annotation-扩展" class="headerlink" title="Kotlin Annotation 扩展"></a>Kotlin Annotation 扩展</h3><p>由于在Kotlin中的单个申明往往对应了多个Java声明，例如，一个Property对应了一个Field和Getter和Setter,为了使标注更为精确，Kotlin中还允许使用点目标。<br>点目标的语法为 @目标:注解名 例如:@get:MyAnnotation</p>
-<pre><code>class Country{
-    /*对属性的getter使用注解*/
-    @get:MyAnnotation2(&quot;Editable&quot;)
-    var name : String = &quot;&quot;
+</code></pre><p>submit总结：<br>1.线程池submit一个callable或者runnable对象以及返回结果result（result默认为null）。<br>2.submit方法中实例化一个包装后的类型为Runnable的RunnableTask对象。<br>3.再调用execute方法将RunnableTask对象添加到任务中。RunnableTask对象的run方法中执行了被提交的任务，同时在任务执行结束之后将result设置成返回值。并且RunnableTask对象提供了get线程阻塞方法获取预先设置的返回值result。<br>4.将RunnableTask对象作为submit方法的返回值返回。</p>
+<h3 id="常用的线程池"><a href="#常用的线程池" class="headerlink" title="常用的线程池"></a>常用的线程池</h3><h4 id="newFixedThreadPool"><a href="#newFixedThreadPool" class="headerlink" title="newFixedThreadPool"></a>newFixedThreadPool</h4><pre><code>    public static ExecutorService newFixedThreadPool(int var0) {
+        return new ThreadPoolExecutor(var0, var0, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue());
+    }
 
-    /*对属性使用注解*/
-    @MyAnnotation2(&quot;Editable&quot;)
-    var pop : Int = 0
+    public static ExecutorService newFixedThreadPool(int var0, ThreadFactory var1) {
+        return new ThreadPoolExecutor(var0, var0, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), var1);
+    }
+</code></pre><p>固定大小的线程池，可以指定线程池的大小，该线程池corePoolSize和maximumPoolSize相等，阻塞队列使用的是LinkedBlockingQueue，大小为整数最大值。<br>该线程池中的线程数量始终不变，当有新任务提交时，线程池中有空闲线程则会立即执行，如果没有，则会暂存到阻塞队列。对于固定大小的线程池，不存在线程数量的变化。同时使用无界的LinkedBlockingQueue来存放执行的任务。当任务提交十分频繁的时候，LinkedBlockingQueue<br>迅速增大，存在着耗尽系统资源的问题。而且在线程池空闲时，即线程池中没有可运行任务时，它也不会释放工作线程，还会占用一定的系统资源，需要shutdown。</p>
+<h4 id="newSingleThreadExecutor"><a href="#newSingleThreadExecutor" class="headerlink" title="newSingleThreadExecutor"></a>newSingleThreadExecutor</h4><pre><code>    public static ExecutorService newSingleThreadExecutor() {
+        return new Executors.FinalizableDelegatedExecutorService(new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue()));
+    }
 
-    /*对属性的Setter使用注解*/
-    @MyAnnotation3(&quot;Editable&quot;,&quot;Can be below 0&quot;)
-    @set:MyAnnotation3
-    var coin : Int = 0
+    public static ExecutorService newSingleThreadExecutor(ThreadFactory var0) {
+        return new Executors.FinalizableDelegatedExecutorService(new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), var0));
+    }
+</code></pre><p>单个线程线程池，只有一个线程的线程池，阻塞队列使用的是LinkedBlockingQueue,若有多余的任务提交到线程池中，则会被暂存到阻塞队列，待空闲时再去执行。按照先入先出的顺序执行任务。</p>
+<h4 id="newCachedThreadPool"><a href="#newCachedThreadPool" class="headerlink" title="newCachedThreadPool"></a>newCachedThreadPool</h4><pre><code>    public static ExecutorService newCachedThreadPool() {
+        return new ThreadPoolExecutor(0, 2147483647, 60L, TimeUnit.SECONDS, new SynchronousQueue());
+    }
 
-    /*对生成的Field使用注解*/
-    /*具有setter的属性一般会自动生成backing field(后备字段)*/
-    @field:MyAnnotation2(&quot;&quot;)
-    var army : Int = 1000
+    public static ExecutorService newCachedThreadPool(ThreadFactory var0) {
+        return new ThreadPoolExecutor(0, 2147483647, 60L, TimeUnit.SECONDS, new SynchronousQueue(), var0);
+    }
+</code></pre><p>缓存线程池，缓存的线程默认存活60秒。线程的核心池corePoolSize大小为0，核心池最大为Integer.MAX_VALUE,阻塞队列使用的是SynchronousQueue。是一个直接提交的阻塞队列，    他总会迫使线程池增加新的线程去执行新的任务。在没有任务执行时，当线程的空闲时间超过keepAliveTime（60秒），则工作线程将会终止被回收，当提交新任务时，如果没有空闲线程，则创建新线程执行任务，会导致一定的系统开销。如果同时又大量任务被提交，而且任务执行的时间不是特别快，那么线程池便会新增出等量的线程池处理任务，这很可能会很快耗尽系统的资源。</p>
+<h4 id="newScheduledThreadPool"><a href="#newScheduledThreadPool" class="headerlink" title="newScheduledThreadPool"></a>newScheduledThreadPool</h4><pre><code>    public static ScheduledExecutorService newScheduledThreadPool(int var0) {
+        return new ScheduledThreadPoolExecutor(var0);
+    }
 
-}
-</code></pre><p>在Kotlin中支持以下点目标:</p>
-<p>property:代表kotlin中的属性，不能被Java的注解所应用</p>
-<p>field:为属性生成的字段（包括后备字段）</p>
-<p>get:属性的getter</p>
-<p>set:属性的setter</p>
-<p>receiver:扩展函数/属性的接收者</p>
-<p>param:构造函数的参数</p>
-<p>setparam:属性setter的参数</p>
-<p>delegate:委托属性存储委托实例的字段</p>
-<p>file:在文件中声明的顶层函数与类</p>
+    public static ScheduledExecutorService newScheduledThreadPool(int var0, ThreadFactory var1) {
+        return new ScheduledThreadPoolExecutor(var0, var1);
+    }
+</code></pre><p>定时线程池，该线程池可用于周期性地去执行任务，通常用于周期性的同步数据。<br>scheduleAtFixedRate:是以固定的频率去执行任务，周期是指每次执行任务成功执行之间的间隔。<br>schedultWithFixedDelay:是以固定的延时去执行任务，延时是指上一次执行成功之后和下一次开始执行的之前的时间。</p>
+<h3 id="线程池规范"><a href="#线程池规范" class="headerlink" title="线程池规范"></a>线程池规范</h3><h4 id="实例化对象"><a href="#实例化对象" class="headerlink" title="实例化对象"></a>实例化对象</h4><p>实际使用线程池的过程中，如果安装了阿里巴巴开发手册插件，会出现以下几种警告。<br><img src="/2019/03/07/threadPoolExecutor/2.png" alt=""><br>在使用Executors工具类实例化线程的时候会出现以下隐患<br>1.newFixedThreadPool和newSingleThreadExecutor:主要问题是堆积的请求处理队列可能会耗费非常大的内存，甚至OOM。<br>2.newCachedThreadPool和newScheduledThreadPool:主要问题是线程数最大数是Integer.MAX_VALUE，可能会创建数量非常多的线程，甚至OOM。<br><img src="/2019/03/07/threadPoolExecutor/3.png" alt=""><br>在使用ThreadPoolExecutor时自己实现ThreadFactory，从而方便设置所创建线程的ThreadGroup，name等参数。</p>
+<h4 id="线程池大小选取"><a href="#线程池大小选取" class="headerlink" title="线程池大小选取"></a>线程池大小选取</h4><p>CPU数量NCPU获取方法</p>
+<pre><code>Runtime.getRuntime().availableProcessors();
+</code></pre><p>如果是CPU密集型任务，就需要尽量压榨CPU，参考值可以设为 NCPU+1<br>如果是IO密集型任务，参考值可以设置为2*NCPU<br>当然，这只是一个参考值，具体的设置还需要根据实际情况进行调整，比如可以先将线程池大小设置为参考值，再观察任务运行情况和系统负载、资源利用率来进行适当调整。</p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -736,7 +787,7 @@ if (onClick != null) {
                             版权声明：本文为博主原创文章，未经博主允许不得转载。
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://moodstrikerdd.github.io/2018/08/06/annotation/">https://moodstrikerdd.github.io/2018/08/06/annotation/</a>
+                        <strong>本文链接：</strong><a href="https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/">https://moodstrikerdd.github.io/2019/03/07/threadPoolExecutor/</a>
                     </p>
                 </blockquote>
         
@@ -758,21 +809,13 @@ if (onClick != null) {
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/06/java-reflection/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/07/31/ioc-onclick/" id="post_nav-older" class="next-content">
+        <a href="/2019/01/29/md5/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
